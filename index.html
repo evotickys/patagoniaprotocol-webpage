@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patagonia Protocol - Conservación Inteligente</title>
+    <link rel="icon" type="image/png" href="assets/logo.png">
+    
+    <!-- Cargamos Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Importamos la fuente Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Aplicamos la fuente Inter como base */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f9fafb; /* Un gris muy claro para el fondo */
+            color: #1f2937; /* Texto principal oscuro */
+        }
+        
+        /* Color principal (verde oscuro del logo) */
+        .text-brand-green {
+            color: #2a5a40;
+        }
+        .bg-brand-green {
+            background-color: #2a5a40;
+        }
+        .border-brand-green {
+            border-color: #2a5a40;
+        }
+
+        /* Estilo para la sección Hero con imagen de fondo */
+        .hero-section {
+            /* Usamos un placeholder que simula un paisaje de glaciar */
+            background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://placehold.co/1600x900/6b8e83/FFFFFF?text=Imagen+Aérea+Ventisquero+Grosse');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* Efecto Parallax */
+        }
+
+        /* Pequeño ajuste para el timeline */
+        .timeline-item:last-child .timeline-line {
+            display: none;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- ===== SECCIÓN DE NAVEGACIÓN ===== -->
+    <header class="sticky top-0 z-50 w-full bg-white/90 backdrop-blur-md shadow-sm">
+        <nav class="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="flex h-24 items-center justify-between">
+                <div class="flex items-center">
+                    <!-- Logo -->
+                    <a href="#hero" title="Patagonia Protocol" class="flex items-center">
+                        <img class="h-16 w-auto" 
+                             src="assets/logo.png" 
+                             alt="Patagonia Protocol Logo">
+                        <span class="ml-4 text-2xl font-bold text-brand-green">Patagonia Protocol</span>
+                    </a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-2">
+                        <a href="#manifesto" class="text-gray-800 hover:text-brand-green px-4 py-2 rounded-md text-base font-semibold transition-colors">Manifiesto</a>
+                        <a href="#territorio" class="text-gray-800 hover:text-brand-green px-4 py-2 rounded-md text-base font-semibold transition-colors">Territorio</a>
+                        <a href="#modelo" class="text-gray-800 hover:text-brand-green px-4 py-2 rounded-md text-base font-semibold transition-colors">El Modelo</a>
+                        <a href="#activo" class="text-gray-800 hover:text-brand-green px-4 py-2 rounded-md text-base font-semibold transition-colors">El Activo</a>
+                        <a href="#ruta" class="text-gray-800 hover:text-brand-green px-4 py-2 rounded-md text-base font-semibold transition-colors">La Ruta</a>
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                     <a href="#contacto" class="inline-flex items-center rounded-lg border border-transparent bg-brand-green px-6 py-3 text-base font-bold text-white shadow-md hover:bg-opacity-90 focus:outline-none focus:ring-2 focus:ring-brand-green focus:ring-offset-2 transition-all hover:scale-105">
+                        Contacto
+                    </a>
+                </div>
+                <!-- Menú móvil (simplificado) -->
+                <div class="-mr-2 flex md:hidden">
+                    <button type="button" class="inline-flex items-center justify-center rounded-md bg-gray-100 p-2 text-gray-600 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-brand-green" aria-controls="mobile-menu" aria-expanded="false">
+                        <span class="sr-only">Abrir menú principal</span>
+                        <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- ===== SECCIÓN HERO ===== -->
+        <section id="hero" class="hero-section h-screen min-h-[700px] w-full flex flex-col justify-center items-center text-center text-white">
+            <div class="max-w-3xl px-4">
+                <h1 class="text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
+                    La Conservación como un Activo Inteligente.
+                </h1>
+                <p class="mt-6 max-w-2xl mx-auto text-lg leading-8 sm:text-xl text-gray-200">
+                    Patagonia Protocol no lucha contra el sistema: construye uno superior. Hemos diseñado una arquitectura financiera que transforma la tierra virgen en una nueva clase de activo.
+                </p>
+                <div class="mt-10">
+                    <a href="#manifesto" class="rounded-md bg-brand-green px-8 py-3.5 text-base font-semibold text-white shadow-lg hover:bg-opacity-90 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black/50 transition-transform hover:scale-105">
+                        Conocer el Proyecto
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SECCIÓN MANIFIESTO ===== -->
+        <section id="manifesto" class="py-24 sm:py-32">
+            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div class="lg:text-center max-w-3xl mx-auto">
+                    <h2 class="text-base font-semibold leading-7 text-brand-green uppercase">Manifiesto</h2>
+                    <p class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+                        Nuestro Contrato.
+                    </p>
+                    <p class="mt-6 text-lg leading-8 text-gray-600">
+                        Este proyecto se rige por un código, no por un manual de negocios. Son los principios que definen nuestro trabajo y nuestra relación con la tierra.
+                    </p>
+                </div>
+
+                <div class="mt-20">
+                    <div class="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-3">
+                        
+                        <div class="flex flex-col rounded-lg shadow-lg overflow-hidden bg-white">
+                            <div class="p-8 flex-1">
+                                <h3 class="text-xl font-semibold text-gray-900">No Pedimos. Hacemos.</h3>
+                                <p class="mt-4 text-gray-600">
+                                    Rechazamos el modelo de la filantropía volátil y el gasto fiscal crónico. Construimos una estructura autosuficiente, un negocio que se sostiene por su propio mérito, donde cada participante es un dueño, no un donante.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col rounded-lg shadow-lg overflow-hidden bg-white">
+                            <div class="p-8 flex-1">
+                                <h3 class="text-xl font-semibold text-gray-900">El Capital al Servicio de la Tierra.</h3>
+                                <p class="mt-4 text-gray-600">
+                                    El dinero aquí tiene una sola función: trabajar para que el ecosistema descanse. Creamos un sistema donde la rentabilidad está ligada a la salud del bosque, del río y del glaciar. Es la alineación de incentivos más pura.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col rounded-lg shadow-lg overflow-hidden bg-white">
+                            <div class="p-8 flex-1">
+                                <h3 class="text-xl font-semibold text-gray-900">Un Trabajo Limpio.</h3>
+                                <p class="mt-4 text-gray-600">
+                                    Nos medimos por la precisión y la honestidad. Cada decisión, desde la estructura legal hasta el diseño de un sendero, debe ser funcional, duradera y necesaria. No hay espacio para el adorno ni la especulación.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SECCIÓN TERRITORIO ===== -->
+        <section id="territorio" class="bg-white py-24 sm:py-32">
+            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 items-center gap-16 lg:grid-cols-2">
+                    <div>
+                        <h2 class="text-base font-semibold leading-7 text-brand-green uppercase">Territorio</h2>
+                        <p class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+                            El Primer Activo: Ventisquero Grosse.
+                        </p>
+                        <p class="mt-6 text-lg leading-8 text-gray-600">
+                            Nuestro modelo no vive en un papel; vive en la tierra. El punto de partida es una fortaleza natural de aproximadamente 900 hectáreas en la Región de Aysén, en la entrada a los Campos de Hielo Norte.
+                        </p>
+                        <p class="mt-4 text-lg leading-8 text-gray-600">
+                            Es un ecosistema contenido, delimitado por barreras naturales: al oeste, el glaciar Grosse; al norte y al sur, los ríos Huemula y Circo; y al este, el río Exploradores. Es una península terrestre, un santuario protegido por la propia geografía.
+                        </p>
+                        <p class="mt-4 text-lg leading-8 text-gray-600">
+                            Encontramos esta tierra sin intervención, un lienzo en regeneración. Su ubicación estratégica es clave para validar nuestro modelo sin heredar pasivos ambientales.
+                        </p>
+                    </div>
+                    <div class="h-full w-full">
+                        <img src="assets/rio.jpeg" 
+                             alt="Foto del territorio Ventisquero Grosse, mostrando un río" 
+                             class="h-full w-full object-cover rounded-lg shadow-xl">
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- ===== SECCIÓN EL MODELO ===== -->
+        <section id="modelo" class="py-24 sm:py-32">
+            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div class="lg:text-center max-w-3xl mx-auto">
+                    <h2 class="text-base font-semibold leading-7 text-brand-green uppercase">El Modelo</h2>
+                    <p class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+                        La Economía de lo Intacto.
+                    </p>
+                    <p class="mt-6 text-lg leading-8 text-gray-600">
+                        Presentamos una solución estructural a un problema antiguo: cómo financiar la conservación de forma perpetua. Nuestro modelo se basa en una arquitectura de negocio, no en la esperanza.
+                    </p>
+                </div>
+
+                <div class="mt-20">
+                    <dl class="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-3 lg:gap-y-16">
+                        <div class="relative pl-16">
+                            <dt class="text-base font-semibold leading-7 text-gray-900">
+                                <div class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-brand-green">
+                                    <svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6m-1.5 12V10.332A48.36 48.36 0 0012 9.75c-2.551 0-5.06.3-7.5.882V21" />
+                                    </svg>
+                                </div>
+                                Estructura de Conservación
+                            </dt>
+                            <dd class="mt-2 text-base leading-7 text-gray-600">El terreno se adquiere y se mantiene dentro de una SpA de propósito único y estatutariamente limitado: conservar y operar de forma sostenible.</dd>
+                        </div>
+                        <div class="relative pl-16">
+                            <dt class="text-base font-semibold leading-7 text-gray-900">
+                                <div class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-brand-green">
+                                    <svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.75A.75.75 0 013 4.5h.75m0 0v.75A.75.75 0 013 6h-.75m0 0H2.25m9 12.75l-1.17-1.299A5.002 5.002 0 0113.5 10.5h.008c.03 0 .059.01.088.018a5.002 5.002 0 014.232 7.66l-1.17 1.299m-3.6-8.25V5.25A2.25 2.25 0 0112 3h.008a2.25 2.25 0 012.242 2.25v3.188m-3.6 5.25V18m0 0l1.17-1.299A5.002 5.002 0 0113.5 10.5h.008c.03 0 .059.01.088.018a5.002 5.002 0 014.232 7.66l-1.17 1.299" />
+                                    </svg>
+                                </div>
+                                Motor de Retorno
+                            </dt>
+                            <dd class="mt-2 text-base leading-7 text-gray-600">Se generan ingresos a través de una operación turística de alto valor y bajo impacto, y se capitalizan futuros servicios ecosistémicos (créditos de carbono, etc.).</dd>
+                        </div>
+                        <div class="relative pl-16">
+                            <dt class="text-base font-semibold leading-7 text-gray-900">
+                                <div class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-brand-green">
+                                    <svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 11.21 12.77 10.5 12 10.5s-1.536.71-2.121 1.256z" />
+                                    </svg>
+                                </div>
+                                Alternativa Superior
+                            </dt>
+                            <dd class="mt-2 text-base leading-7 text-gray-600">Este sistema autosostenible reemplaza la necesidad de donaciones y libera al Estado de mantener parques como centros de costo. Conservar es más rentable que subdividir.</dd>
+                        </div>
+                    </dl>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SECCIÓN EL ACTIVO ===== -->
+        <section id="activo" class="bg-brand-green text-white py-24 sm:py-32">
+            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 items-center gap-16 lg:grid-cols-2">
+                    <div class="lg:order-last">
+                        <h2 class="text-base font-semibold leading-7 text-gray-300 uppercase">El Activo</h2>
+                        <p class="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">
+                            Tu Parte del Fuego.
+                        </p>
+                        <p class="mt-6 text-lg leading-8 text-gray-200">
+                            El token es la herramienta que materializa la participación. No es una criptomoneda especulativa, sino un activo digital bajo regulación chilena (Ley Fintec), que representa un valor real y tangible.
+                        </p>
+                        <dl class="mt-10 grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 h-8 w-8 flex items-center justify-center rounded-full bg-white/20 text-white">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" /></svg>
+                                </div>
+                                <div class="ml-4">
+                                    <dt class="text-lg font-medium leading-6">Propiedad Patrimonial</dt>
+                                    <dd class="text-base text-gray-300">Adquieres una participación fraccionada y legal del proyecto: la tierra y el negocio.</dd>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 h-8 w-8 flex items-center justify-center rounded-full bg-white/20 text-white">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" /></svg>
+                                </div>
+                                <div class="ml-4">
+                                    <dt class="text-lg font-medium leading-6">Retorno Financiero</dt>
+                                    <dd class="text-base text-gray-300">Recibes una parte de los beneficios netos generados por la operación del ecosistema.</dd>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 h-8 w-8 flex items-center justify-center rounded-full bg-white/20 text-white">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" /></svg>
+                                </div>
+                                <div class="ml-4">
+                                    <dt class="text-lg font-medium leading-6">Pertenencia y Acceso</dt>
+                                    <dd class="text-base text-gray-300">Te conviertes en "habitante simbólico" con acceso preferente al territorio.</dd>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 h-8 w-8 flex items-center justify-center rounded-full bg-white/20 text-white">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" /></svg>
+                                </div>
+                                <div class="ml-4">
+                                    <dt class="text-lg font-medium leading-6">Liquidez Estructurada</dt>
+                                    <dd class="text-base text-gray-300">Diseñado para ser transferible en un mercado secundario regulado.</dd>
+                                </div>
+                            </div>
+                        </dl>
+                    </div>
+                    <div class="lg:order-first h-full w-full">
+                        <img src="assets/piedras.jpg" 
+                             alt="Representación del activo digital con una imagen de piedras apiladas" 
+                             class="h-full w-full object-cover rounded-lg shadow-xl">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SECCIÓN LA RUTA (Actualizada) ===== -->
+        <section id="ruta" class="py-24 sm:py-32">
+            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div class="max-w-3xl mx-auto lg:text-center">
+                    <h2 class="text-base font-semibold leading-7 text-brand-green uppercase">La Ruta</h2>
+                    <p class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+                        La Frontera Siguiente.
+                    </p>
+                    <p class="mt-6 text-lg leading-8 text-gray-600">
+                        Ventisquero Grosse es la prueba fundacional de un modelo diseñado para ser replicado. Nuestra ruta es clara y se financia por etapas para construir valor progresivamente.
+                    </p>
+                </div>
+
+                <div class="mt-20 max-w-3xl mx-auto">
+                    <ol class="relative">
+                        <!-- Fase 1 (Actualizada) -->
+                        <li class="mb-10 ml-12 timeline-item">
+                            <span class="absolute flex items-center justify-center w-12 h-12 bg-brand-green rounded-full -left-6 ring-8 ring-white">
+                                <span class="text-white font-bold">1</span>
+                            </span>
+                            <div class="ml-4 p-6 bg-white rounded-lg shadow-lg border border-gray-100">
+                                <time class="block mb-2 text-sm font-normal leading-none text-brand-green">FASE 1 - FUNDACIÓN (2025)</time>
+                                <h3 class="text-xl font-semibold text-gray-900">Ronda Seed (USD $125k)</h3>
+                                <p class="mt-2 text-base font-normal text-gray-600">Constitución de Patagonia Protocol SpA. Fondos para operar, cubrir costos legales/tecnológicos de estructuración y financiar al equipo clave para preparar la gran operación de tokenización.</p>
+                            </div>
+                            <div class="timeline-line absolute left-0 w-px h-full bg-gray-300 -translate-x-1/2 ml-6 mt-2"></div>
+                        </li>
+                        
+                        <!-- Fase 2 (Actualizada) -->
+                        <li class="mb-10 ml-12 timeline-item">
+                            <span class="absolute flex items-center justify-center w-12 h-12 bg-brand-green rounded-full -left-6 ring-8 ring-white">
+                                <span class="text-white font-bold">2</span>
+                            </span>
+                            <div class="ml-4 p-6 bg-white rounded-lg shadow-lg border border-gray-100">
+                                <time class="block mb-2 text-sm font-normal leading-none text-brand-green">FASE 2 - ADQUISICIÓN (2025-2026)</time>
+                                <h3 class="text-xl font-semibold text-gray-900">Emisión de Tokens (ICO - USD $4M)</h3>
+                                <p class="mt-2 text-base font-normal text-gray-600">Lanzamiento de la venta pública de "Patagonia Tokens". El 100% de los fondos recaudados se destinará a la compra del activo piloto (Ventisquero Grosse).</p>
+                            </div>
+                            <div class="timeline-line absolute left-0 w-px h-full bg-gray-300 -translate-x-1/2 ml-6 mt-2"></div>
+                        </li>
+                        
+                        <!-- Fase 3 (Actualizada) -->
+                        <li class="mb-10 ml-12 timeline-item">
+                            <span class="absolute flex items-center justify-center w-12 h-12 bg-brand-green rounded-full -left-6 ring-8 ring-white">
+                                <span class="text-white font-bold">3</span>
+                            </span>
+                            <div class="ml-4 p-6 bg-white rounded-lg shadow-lg border border-gray-100">
+                                <time class="block mb-2 text-sm font-normal leading-none text-brand-green">FASE 3 - DESARROLLO (2026)</time>
+                                <h3 class="text-xl font-semibold text-gray-900">Consolidación y Operación</h3>
+                                <p class="mt-2 text-base font-normal text-gray-600">Inicio de la operación turística de bajo impacto. Futuras rondas financiarán la infraestructura premium (lodge, refugios) para generar flujos de retorno.</p>
+                            </div>
+                            <div class="timeline-line absolute left-0 w-px h-full bg-gray-300 -translate-x-1/2 ml-6 mt-2"></div>
+                        </li>
+
+                        <!-- Fase 4 (Actualizada) -->
+                        <li class="ml-12 timeline-item">
+                            <span class="absolute flex items-center justify-center w-12 h-12 bg-brand-green rounded-full -left-6 ring-8 ring-white">
+                                <span class="text-white font-bold">4</span>
+                            </span>
+                            <div class="ml-4 p-6 bg-white rounded-lg shadow-lg border border-gray-100">
+                                <time class="block mb-2 text-sm font-normal leading-none text-brand-green">FASE 4 - EXPANSIÓN (2026+)</time>
+                                <h3 class="text-xl font-semibold text-gray-900">Replicación del Modelo</h3>
+                                <p class="mt-2 text-base font-normal text-gray-600">Con el modelo validado, iniciaremos la búsqueda y estructuración del segundo activo del protocolo. La frontera se expande.</p>
+                            </div>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SECCIÓN CONTACTO (Placeholder) ===== -->
+        <section id="contacto" class="bg-white py-24 sm:py-32">
+            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div class="relative isolate overflow-hidden bg-brand-green shadow-2xl rounded-2xl px-6 py-24 sm:px-16 sm:py-32">
+                    <div class="mx-auto max-w-2xl text-center">
+                        <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">
+                            Únete a la nueva era de conservación.
+                        </h2>
+                        <p class="mx-auto mt-6 max-w-xl text-lg leading-8 text-gray-300">
+                            Estamos buscando socios estratégicos e inversionistas que compartan nuestra visión. Si crees en un modelo donde la conservación y el retorno coexisten, hablemos.
+                        </p>
+                        <div class="mt-10 flex items-center justify-center gap-x-6">
+                            <a href="mailto:info@patagoniaprotocol.com" class="rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-brand-green shadow-sm hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">
+                                Escríbenos
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="bg-gray-800" aria-labelledby="footer-heading">
+        <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+            <div class="flex flex-col items-center justify-between sm:flex-row">
+                <div class="flex items-center">
+                    <img class="h-10 w-10 rounded-md" 
+                         src="https://placehold.co/100x100/2a5a40/FFFFFF?text=P" 
+                         alt="Patagonia Protocol Logo">
+                    <span class="ml-3 text-xl font-semibold text-white">Patagonia Protocol</span>
+                </div>
+                <p class="mt-4 text-base text-gray-400 sm:mt-0">
+                    &copy; 2025 Patagonia Protocol SpA.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
