@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>La teoría del fractal — Patagonia Protocol</title>
+    <link rel="icon" type="image/png" href="/assets/logo.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/2.1.0/showdown.min.js"></script>
+    <style>
+        body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial; background:#f9fafb; color:#111827}
+        .post-hero{background-image:linear-gradient(rgba(0,0,0,0.35),rgba(0,0,0,0.35)), url('https://placehold.co/1600x700/7aa18f/ffffff?text=Helecho+Detalle'); background-size:cover; background-position:center}
+        .post-content{font-family:'Merriweather',serif; font-size:1.125rem; line-height:1.8; color:#111827}
+    </style>
+</head>
+<body>
+    <header class="sticky top-0 z-50 w-full bg-white/90 backdrop-blur-md shadow-sm">
+        <nav class="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="flex h-16 items-center justify-between">
+                <a href="/index.html" class="flex items-center">
+                    <img src="/assets/logo.png" class="h-10 w-auto" alt="logo">
+                    <span class="ml-3 font-bold text-[#2a5a40]">Patagonia Protocol</span>
+                </a>
+                <div class="hidden md:flex items-center gap-4">
+                    <a href="/blog.html" class="text-sm font-semibold text-[#2a5a40]">Volver al PataBlog</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="post-hero py-28 text-white">
+            <div class="container mx-auto max-w-3xl px-4 text-center">
+                <div class="text-sm font-mono text-[#dff0e0] uppercase">Tokenomics</div>
+                <h1 id="post-title" class="mt-4 text-3xl sm:text-4xl font-extrabold">Cargando…</h1>
+                <div id="post-meta" class="mt-3 text-sm opacity-90">21 Nov, 2025 · Patagonia Protocol</div>
+            </div>
+        </section>
+
+        <div class="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <article class="lg:col-span-2">
+                    <div id="post-content" class="post-content bg-white p-8 rounded-lg shadow"></div>
+                </article>
+                <aside class="hidden lg:block">
+                    <div class="sticky top-28 space-y-6">
+                        <div class="bg-white p-4 rounded-lg shadow">
+                            <div class="font-semibold mb-2">Compartir</div>
+                            <div class="flex flex-col gap-2">
+                                <a href="#" class="text-sm text-[#2a5a40]">LinkedIn</a>
+                                <a href="#" class="text-sm text-[#2a5a40]">X</a>
+                                <a href="#" class="text-sm text-[#2a5a40]">Twitter</a>
+                            </div>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow">
+                            <div class="font-semibold mb-2">Suscríbete</div>
+                            <p class="text-sm text-gray-600">Recibe análisis trimestrales y reportes de impacto.</p>
+                            <form class="mt-3" action="mailto:inversionistas@patagoniaprotocol.com" method="post" enctype="text/plain">
+                                <input type="email" name="email" placeholder="Tu correo" class="w-full p-2 border rounded" />
+                                <button class="mt-3 w-full bg-[#2a5a40] text-white py-2 rounded font-semibold">Suscribirse</button>
+                            </form>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Static metadata
+        document.getElementById('post-title').textContent = 'Teoría del Fractal: el activo como sistema';
+        document.getElementById('post-meta').textContent = '8 de Marzo, 2025 · Patagonia Protocol';
+
+        document.getElementById('post-content').innerHTML = `
+            <p>La idea del fractal nos ayuda a entender cómo escalar conservación sin repetir errores del pasado. Un fractal es una estructura que se repite a distintas escalas manteniendo coherencia interna —como un helecho o una línea costera.</p>
+
+            <h2>Principios</h2>
+            <ul>
+                <li><strong>Autonomía:</strong> cada unidad conserva su integridad pero se conecta a la red.</li>
+                <li><strong>Repetibilidad:</strong> el mismo conjunto de reglas opera en distintas geografías.</li>
+                <li><strong>Resiliencia:</strong> la red tolera fallas locales sin colapsar globalmente.</li>
+            </ul>
+
+            <p>Aplicado a activos naturales, esto significa diseñar cada propiedad como un nodo: con reglas legales claras (DRC), operaciones concesionadas a especialistas y flujos financieros compartidos mediante estructuras tokenizadas.</p>
+
+            <h2>Impacto práctico</h2>
+            <ol>
+                <li>Protección legal uniforme que evita la fragmentación.</li>
+                <li>Modelos de gobernanza mixtos que alinean poblaciones locales y capital.</li>
+                <li>Mecanismos financieros líquidos para captar capital a escala sin degradar el activo.</li>
+            </ol>
+        `;
+    </script>
+</body>
+</html>
