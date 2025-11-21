@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675">
+  <defs>
+    <pattern id="dots" width="24" height="24" patternUnits="userSpaceOnUse">
+      <circle cx="4" cy="4" r="2" fill="#e6f3ea" />
+    </pattern>
+  </defs>
+  <rect width="100%" height="100%" fill="#0f2b1f" />
+  <rect width="100%" height="100%" fill="url(#dots)" opacity="0.08" />
+  <g fill="#fff" font-family="Georgia, serif">
+    <text x="60" y="140" font-size="36" font-weight="700">La Teoría del Fractal</text>
+    <text x="60" y="200" font-size="18">Por qué el Patagonia Token no es una Moneda</text>
+  </g>
+</svg>
