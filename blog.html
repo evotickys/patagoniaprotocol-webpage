@@ -13,6 +13,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <!-- Importamos Merriweather para títulos/serif -->
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
     
     <!-- Showdown.js para convertir Markdown a HTML -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/2.1.0/showdown.min.js"></script>
@@ -32,6 +34,8 @@
             color: #2a5a40;
             text-decoration: underline;
         }
+        /* Serif utility for titles (use Merriweather loaded above) */
+        .font-serif { font-family: 'Merriweather', serif; font-weight:700; }
     </style>
 </head>
 <body class="antialiased">
@@ -82,33 +86,33 @@
     <script>
         // Blog data (provided JSON)
         const POSTS = [
-          {
-            "slug": "fin-de-la-filantropia",
-            "category": "Tesis de Inversión",
-            "date": "21 Nov, 2025",
-            "title": "El fin de la filantropía: por qué la conservación necesita un modelo de negocios",
-            "excerpt": "Un parque privado es un pasivo financiero feroz. Analizamos por qué el modelo del 'mecenas' está roto y cómo transformar los costos de conservación en infraestructura de inversión rentable.",
-            "imageAlt": "Bosque nativo con superposición de gráfico financiero",
-            "image": "https://placehold.co/800x450/9fbfa8/ffffff?text=Bosque+Nativo"
-          },
-          {
-            "slug": "que-es-patagonia-protocol",
-            "category": "Infraestructura",
-            "date": "21 Nov, 2025",
-            "title": "¿Qué es Patagonia Protocol? No somos una inmobiliaria, somos un sistema operativo.",
-            "excerpt": "La tierra es el hardware; nosotros construimos el software. Explicamos por qué lotear parcelas es ineficiente y cómo nuestro 'Protocolo' resuelve la fragmentación.",
-            "imageAlt": "Plano digital sobre paisaje natural",
-            "image": "https://placehold.co/800x450/8aa3b0/ffffff?text=Plano+Digital"
-          },
-          {
-            "slug": "teoria-del-fractal",
-            "category": "Tokenomics",
-            "date": "21 Nov, 2025",
-            "title": "La teoría del fractal: por qué el Patagonia Token no es una moneda.",
-            "excerpt": "No vendemos coordenadas GPS aisladas. Usamos la geometría fractal para crear un activo '3-en-1' que contiene el ADN completo del proyecto en cada unidad.",
-            "imageAlt": "Detalle macro de un helecho fractal",
-            "image": "https://placehold.co/800x450/7aa18f/ffffff?text=Helecho+Detalle"
-          }
+                    {
+                        "slug": "fin-de-la-filantropia",
+                        "category": "Tesis de Inversión",
+                        "date": "21 Nov, 2025",
+                        "title": "El fin de la filantropía: por qué la conservación necesita un modelo de negocios",
+                        "excerpt": "Un parque privado es un pasivo financiero feroz. Analizamos por qué el modelo del 'mecenas' está roto y cómo transformar los costos de conservación en infraestructura de inversión rentable.",
+                        "imageAlt": "Bosque nativo con superposición de gráfico financiero",
+                        "image": "imagenes-blog/fin-de-la-filantropia.jpg"
+                    },
+                    {
+                        "slug": "que-es-patagonia-protocol",
+                        "category": "Infraestructura",
+                        "date": "21 Nov, 2025",
+                        "title": "¿Qué es Patagonia Protocol? No somos una inmobiliaria, somos un sistema operativo.",
+                        "excerpt": "La tierra es el hardware; nosotros construimos el software. Explicamos por qué lotear parcelas es ineficiente y cómo nuestro 'Protocolo' resuelve la fragmentación.",
+                        "imageAlt": "Plano digital sobre paisaje natural",
+                        "image": "imagenes-blog/que-es-patagonia-protocol.jpg"
+                    },
+                    {
+                        "slug": "teoria-del-fractal",
+                        "category": "Tokenomics",
+                        "date": "21 Nov, 2025",
+                        "title": "La teoría del fractal: por qué el Patagonia Token no es una moneda.",
+                        "excerpt": "No vendemos coordenadas GPS aisladas. Usamos la geometría fractal para crear un activo '3-en-1' que contiene el ADN completo del proyecto en cada unidad.",
+                        "imageAlt": "Detalle macro de un helecho fractal",
+                        "image": "imagenes-blog/teoria-del-fractal.jpg"
+                    }
         ];
 
         // Utility: create card elements
@@ -166,9 +170,6 @@
     <style>
         /* Line clamp (3 lines) */
         .line-clamp-3 { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; line-clamp: 3; }
-        /* Serif font for titles */
-        @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap');
-        .font-serif { font-family: 'Merriweather', serif; }
     </style>
 
     <!-- ===== FOOTER ===== -->

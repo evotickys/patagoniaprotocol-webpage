@@ -12,9 +12,18 @@
         body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial; background:#f9fafb; color:#111827}
         .post-hero{background-image:linear-gradient(rgba(0,0,0,0.35),rgba(0,0,0,0.35)), url('https://placehold.co/1600x700/8aa3b0/ffffff?text=Plano+Digital'); background-size:cover; background-position:center}
         .post-content{font-family:'Merriweather',serif; font-size:1.125rem; line-height:1.8; color:#111827}
+
+        /* Typography adjustments requested: subtitles, justification, paragraph spacing, list styling */
+        .post-content p { text-align: justify; margin-bottom: 1.25rem; }
+        .post-content h2 { margin-top: 1.5rem; margin-bottom: 0.9rem; font-weight: 700; font-size: 1.25rem; }
+        .post-content ol, .post-content ul { margin-left: 1.35rem; margin-bottom: 1rem; }
+        .post-content ol li, .post-content ul li { margin-bottom: 0.7rem; }
+        .post-content ol li::marker { font-weight: 700; }
+        .post-content ul li::marker { font-weight: 700; }
     </style>
 </head>
 <body>
+    <!-- header (compact) -->
     <header class="sticky top-0 z-50 w-full bg-white/90 backdrop-blur-md shadow-sm">
         <nav class="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div class="flex h-16 items-center justify-between">
