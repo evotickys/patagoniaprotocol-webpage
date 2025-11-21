@@ -10,7 +10,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/2.1.0/showdown.min.js"></script>
     <style>
         body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial; background:#f9fafb; color:#111827}
-        .post-hero{background-image:linear-gradient(rgba(0,0,0,0.35),rgba(0,0,0,0.35)), url('https://placehold.co/1600x700/7aa18f/ffffff?text=Helecho+Detalle'); background-size:cover; background-position:center}
+        .post-hero{background-image:linear-gradient(rgba(0,0,0,0.35),rgba(0,0,0,0.35)), url('/imagenes-blog/teoria-del-fractal.jpg'); background-size:cover; background-position:center}
         .post-content{font-family:'Merriweather',serif; font-size:1.125rem; line-height:1.8; color:#111827}
 
         /* Typography adjustments requested: subtitles, justification, paragraph spacing, list styling */
@@ -114,6 +114,19 @@
 
             <p>Eso es un Fractal. Y por eso el Patagonia Token no es una moneda; es un organismo financiero vivo.</p>
         `;
+    </script>
+
+    <script>
+        // Ensure hero background exists, otherwise use placeholder
+        (function(){
+            const hero = document.querySelector('.post-hero');
+            const imgUrl = '/imagenes-blog/teoria-del-fractal.jpg';
+            fetch(imgUrl, {method: 'GET'}).then(r=>{
+                if(!r.ok) throw new Error('not-found');
+            }).catch(()=>{
+                hero.style.backgroundImage = "linear-gradient(rgba(0,0,0,0.35),rgba(0,0,0,0.35)), url('https://placehold.co/1600x700/cccccc/555?text=Imagen+no+disponible')";
+            });
+        })();
     </script>
 </body>
 </html>

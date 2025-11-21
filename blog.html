@@ -127,6 +127,12 @@
             img.src = post.image;
             img.alt = post.imageAlt || post.title;
             img.className = 'w-full h-full object-cover transition-transform duration-500 group-hover:scale-105';
+            // Fallback if local image is missing or fails to load
+            img.onerror = function(){
+                this.onerror = null;
+                this.src = 'https://placehold.co/800x450/cccccc/555?text=Imagen+no+disponible';
+                this.classList.add('opacity-80');
+            };
             imgWrap.appendChild(img);
 
             const body = document.createElement('div');

@@ -10,7 +10,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/2.1.0/showdown.min.js"></script>
     <style>
         body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial; background:#f9fafb; color:#111827}
-        .post-hero{background-image:linear-gradient(rgba(0,0,0,0.35),rgba(0,0,0,0.35)), url('https://placehold.co/1600x700/9fbfa8/ffffff?text=Bosque+Nativo'); background-size:cover; background-position:center}
+        .post-hero{background-image:linear-gradient(rgba(0,0,0,0.35),rgba(0,0,0,0.35)), url('/imagenes-blog/fin-de-la-filantropia.jpg'); background-size:cover; background-position:center}
         .post-content{font-family:'Merriweather',serif; font-size:1.125rem; line-height:1.8; color:#111827}
 
         /* Typography adjustments requested: subtitles, justification, paragraph spacing, list styling */
@@ -82,6 +82,19 @@
         // Static rendering: set title/meta directly (from provided content)
         document.getElementById('post-title').textContent = 'El Fin de la Filantropía: Por qué la Conservación necesita un Modelo de Negocios';
         document.getElementById('post-meta').textContent = '21 de Noviembre, 2025 · Eugenio Voticky';
+    </script>
+
+    <script>
+        // Ensure hero background exists, otherwise use placeholder
+        (function(){
+            const hero = document.querySelector('.post-hero');
+            const imgUrl = '/imagenes-blog/fin-de-la-filantropia.jpg';
+            fetch(imgUrl, {method: 'GET'}).then(r=>{
+                if(!r.ok) throw new Error('not-found');
+            }).catch(()=>{
+                hero.style.backgroundImage = "linear-gradient(rgba(0,0,0,0.35),rgba(0,0,0,0.35)), url('https://placehold.co/1600x700/cccccc/555?text=Imagen+no+disponible')";
+            });
+        })();
     </script>
 
     <!-- Post content (pre-rendered from Markdown) -->
