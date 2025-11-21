@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Patagonia Protocol</title>
+    <link rel="icon" type="image/png" href="assets/logo.png">
+    
+    <!-- Cargamos Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Importamos la fuente Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Showdown.js para convertir Markdown a HTML -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/2.1.0/showdown.min.js"></script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f9fafb;
+            color: #1f2937;
+        }
+        .text-brand-green { color: #2a5a40; }
+        .bg-brand-green { background-color: #2a5a40; }
+        .prose h1, .prose h2, .prose h3 {
+            color: #2a5a40;
+        }
+        .prose a {
+            color: #2a5a40;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- ===== SECCIÓN DE NAVEGACIÓN ===== -->
+    <header class="sticky top-0 z-50 w-full bg-white/90 backdrop-blur-md shadow-sm">
+        <nav class="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="flex h-24 items-center justify-between">
+                <div class="flex items-center">
+                    <a href="index.html" title="Patagonia Protocol" class="flex items-center">
+                        <img class="h-16 w-auto" src="assets/logo.png" alt="Patagonia Protocol Logo">
+                        <span class="ml-4 text-2xl font-bold text-brand-green">Patagonia Protocol</span>
+                    </a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-2">
+                        <a href="index.html#manifesto" class="text-gray-800 hover:text-brand-green px-4 py-2 rounded-md text-base font-semibold transition-colors">Manifiesto</a>
+                        <a href="index.html#territorio" class="text-gray-800 hover:text-brand-green px-4 py-2 rounded-md text-base font-semibold transition-colors">Territorio</a>
+                        <a href="blog.html" class="text-brand-green hover:text-brand-green px-4 py-2 rounded-md text-base font-semibold transition-colors">Blog</a>
+                        <a href="index.html#ruta" class="text-gray-800 hover:text-brand-green px-4 py-2 rounded-md text-base font-semibold transition-colors">La Ruta</a>
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                     <a href="index.html#contacto" class="inline-flex items-center rounded-lg border border-transparent bg-brand-green px-6 py-3 text-base font-bold text-white shadow-md hover:bg-opacity-90 focus:outline-none focus:ring-2 focus:ring-brand-green focus:ring-offset-2 transition-all hover:scale-105">
+                        Contacto
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="py-16 sm:py-24">
+        <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
+                    Blog del Protocolo
+                </h1>
+                <p class="mt-4 text-xl text-gray-600">
+                    Noticias, avances y reflexiones sobre la nueva era de la conservación.
+                </p>
+            </div>
+
+            <div id="posts-container" class="mt-16 space-y-16">
+                <!-- Las publicaciones del blog se cargarán aquí dinámicamente -->
+            </div>
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const postsContainer = document.getElementById('posts-container');
+            const converter = new showdown.Converter({metadata: true});
+            
+            // Lista de archivos de blog. Debes mantener esta lista actualizada.
+            const postFiles = [
+                'fin-de-la-filantropia.md',
+                'que-es-patagonia-protocol.md',
+                'que-es-el-patagonia-token.md'
+            ];
+
+            postFiles.forEach(file => {
+                fetch('blog/' + file)
+                    .then(response => response.text())
+                    .then(markdown => {
+                        const html = converter.makeHtml(markdown);
+                        const metadata = converter.getMetadata();
+
+                        const postElement = document.createElement('article');
+                        postElement.className = 'prose lg:prose-xl max-w-none bg-white p-8 rounded-lg shadow-lg';
+                        
+                        let postHeader = `
+                            <h2 class="!text-3xl !mt-0">${metadata.title || 'Sin Título'}</h2>
+                            <p class="text-sm text-gray-500"><strong>Autor:</strong> ${metadata.author || 'Anónimo'} | <strong>Fecha:</strong> ${metadata.date || 'Sin Fecha'}</p>
+                        `;
+
+                        postElement.innerHTML = postHeader + html;
+                        postsContainer.appendChild(postElement);
+                    })
+                    .catch(error => {
+                        console.error('Error al cargar el post:', file, error);
+                        const errorElement = document.createElement('div');
+                        errorElement.className = 'text-red-500';
+                        errorElement.textContent = `No se pudo cargar la publicación: ${file}`;
+                        postsContainer.appendChild(errorElement);
+                    });
+            });
+        });
+    </script>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="bg-gray-800" aria-labelledby="footer-heading">
+        <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+            <div class="flex flex-col items-center justify-between sm:flex-row">
+                <div class="flex items-center">
+                    <img class="h-10 w-auto" src="assets/logo.png" alt="Patagonia Protocol Logo">
+                    <span class="ml-3 text-xl font-semibold text-white">Patagonia Protocol</span>
+                </div>
+                <p class="mt-4 text-base text-gray-400 sm:mt-0">
+                    &copy; 2025 Patagonia Protocol SpA.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
