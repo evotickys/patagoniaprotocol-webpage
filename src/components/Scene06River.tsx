@@ -45,7 +45,12 @@ export default function Scene06River(){
     <section ref={ref as any} className="py-20 bg-white">
       <div className="mx-auto max-w-6xl px-6 text-center">
         <h2 className="text-2xl font-bold text-gray-900">Liquidez que crea Vida.</h2>
-        <p className="mt-3 text-gray-600 max-w-2xl mx-auto">% de Llenado de Tesorería. Mientras navegas, la barra refleja la cantidad recaudada (simulada por scroll).</p>
+        <p className="mt-3 text-gray-600 max-w-2xl mx-auto">¿Cómo crece el valor sin diluirte? Usamos el "Modelo del Río". Cada nueva emisión de tokens se vende con una prima estratégica (+25%) que no va a utilidades, sino que llena una <strong>Represa de Tesorería</strong>. Cuando el embalse alcanza su nivel crítico, el capital se libera para adquirir el siguiente activo al contado, aumentando instantáneamente el respaldo de tierra por cada token en circulación.</p>
+
+        <div className="mt-6 flex items-center justify-center gap-4">
+          <div className="px-4 py-2 bg-[#eef3ea] rounded-md text-sm font-semibold">ESTADO REPRESA: <span className="text-[#2a5a40]">{percent < 100 ? 'LLENANDO' : 'LLENA'}</span></div>
+          <div className="px-4 py-2 bg-[#eef3ea] rounded-md text-sm font-semibold">OBJETIVO: <span className="text-[#2a5a40]">NODO 02 (ATACAMA)</span></div>
+        </div>
 
         <div className="mt-8 flex flex-col items-center gap-4">
           <div className="w-full max-w-3xl">
@@ -60,7 +65,7 @@ export default function Scene06River(){
           </div>
 
           <div className="w-full max-w-3xl">
-            <div className="mt-4 text-left text-sm text-gray-600">Métrica: % de Llenado de Tesorería (simulado). Trigger: Scroll.</div>
+            <div className="mt-4 text-left text-sm text-gray-600">Métrica: % de Llenado de Tesorería (simulado por scroll). Nota: +25% de prima se destina exclusivamente a la Represa de Tesorería para comprar activos.</div>
           </div>
         </div>
       </div>

@@ -7,10 +7,12 @@ import Scene03Protocol from '@/components/Scene03Protocol'
 import Scene04Fractal from '@/components/Scene04Fractal'
 import Scene05Asset from '@/components/Scene05Asset'
 import Scene06River from '@/components/Scene06River'
+import Scene07Club from '@/components/Scene07Club'
+import Scene08CTA from '@/components/Scene08CTA'
 
 export default function Home() {
   return (
-    <main>
+    <main className="overflow-x-hidden">
       {/* HERO (Scene 01) */}
       <Scene01Hero />
 
@@ -28,6 +30,12 @@ export default function Home() {
 
       {/* SCENE 06 - RIVER (progress) */}
       <Scene06River />
+
+      {/* SCENE 07 - CLUB */}
+      <Scene07Club />
+
+      {/* SCENE 08 - CTA */}
+      <Scene08CTA />
 
       {/* VALUE PROP */}
       <section className="py-20 bg-gray-50">

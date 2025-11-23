@@ -27,13 +27,7 @@ export default function Scene01Hero(){
     <section className="relative h-screen min-h-[680px] w-full flex items-center text-white overflow-hidden bg-[#050A08]">
       {/* Video / Media */}
       <div className="absolute inset-0 z-0">
-        {!reduced ? (
-          <video className="absolute inset-0 h-full w-full object-cover" autoPlay muted loop playsInline poster="/assets/hero-7b.jpg">
-            <source src="/assets/hero-video.mp4" type="video/mp4" />
-          </video>
-        ) : (
-          <Image src="/assets/hero-7b.jpg" alt="Hero" fill className="object-cover" />
-        )}
+        <Image src="/assets/hero-1.jpg" alt="Hero" fill className="object-cover" />
         <div className="absolute inset-0 bg-gradient-to-b from-black/30 to-black/60" />
         {/* gold scan overlay */}
         <div className="absolute inset-0 pointer-events-none">
@@ -46,14 +40,14 @@ export default function Scene01Hero(){
           <div className="inline-block mb-4 px-3 py-1 rounded-md bg-white/10 text-sm font-mono">Ticker: <span className="font-bold">$PAT</span></div>
 
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight">
-            <Typewriter text={"No dones a la naturaleza. Iniverte en ella."} speed={reduced ? 0 : 30} disabled={reduced} />
+            <Typewriter text={"No dones a la naturaleza. Invierte en ella."} speed={reduced ? 0 : 30} disabled={reduced} />
           </h1>
 
-          <p className="mt-6 max-w-xl text-lg text-[#E2E8F0]">La ingeniería financiera dura para siempre.</p>
+          <p className="mt-6 max-w-2xl text-lg text-[#E2E8F0]">La filantropía es un gesto noble, pero tiene fecha de vencimiento. Cuando se acaba la voluntad, se acaba el bosque. Nosotros reemplazamos la caridad con ingeniería financiera. Transformamos la conservación en la clase de activo más resiliente y necesaria del siglo XXI.</p>
 
           <div className="mt-8 flex items-center gap-4">
-            <button onClick={()=>setOpen(true)} className="inline-block rounded-md bg-[#D4AF37] text-[#050A08] px-5 py-3 font-semibold shadow hover:scale-[1.02] transition">Unirse a la Espera</button>
-            <Link href="/token" className="inline-block rounded-md border border-white/20 px-4 py-3 text-white hover:bg-white/5 transition">Leer el Whitepaper</Link>
+            <button onClick={()=>setOpen(true)} className="inline-block rounded-md bg-[#D4AF37] text-[#050A08] px-5 py-3 font-semibold shadow hover:scale-[1.02] transition uppercase">Unirse a la Espera</button>
+            <Link href="/whitepaper.pdf" className="inline-block rounded-md border border-white/20 px-4 py-3 text-white hover:bg-white/5 transition uppercase">Leer la Tesis</Link>
           </div>
         </div>
 

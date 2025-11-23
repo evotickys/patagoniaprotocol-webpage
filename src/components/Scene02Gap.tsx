@@ -11,8 +11,10 @@ export default function Scene02Gap(){
     <section className="py-24 bg-[#050A08] text-white overflow-hidden">
       <div className="mx-auto max-w-6xl px-6 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
         <div>
-          <motion.h2 initial={{opacity:0, y:12}} whileInView={{opacity:1, y:0}} transition={{duration:0.6}} className="text-2xl font-bold">El error contable más caro del mundo.</motion.h2>
-          <motion.p initial={{opacity:0}} whileInView={{opacity:1}} transition={{delay:0.15, duration:0.6}} className="mt-4 text-lg text-gray-200 max-w-xl">Hoy, un bosque virgen es un pasivo. 70 Millones de pesos mensuales en costos de mantención.</motion.p>
+          <motion.h2 initial={{opacity:0, y:12}} whileInView={{opacity:1, y:0}} transition={{duration:0.6}} className="text-2xl font-bold">El error contable más caro del planeta.</motion.h2>
+          <motion.p initial={{opacity:0}} whileInView={{opacity:1}} transition={{delay:0.15, duration:0.6}} className="mt-4 text-lg text-gray-200 max-w-xl">Para el mercado tradicional, un árbol solo tiene valor cuando se tala. Mientras sigue de pie, es un costo operativo feroz. Hoy, mantener un parque privado de alto estándar cuesta más de 70 Millones de pesos al mes. Es un modelo roto que convierte activos biológicos invaluables en pasivos financieros insostenibles.</motion.p>
+
+          <div className="mt-6 inline-block px-3 py-2 rounded-md bg-[#2b0b07] border border-[#D4AF37] text-sm font-semibold">STATUS: PASIVO FINANCIERO / ALTO RIESGO</div>
         </div>
 
         <div className="relative">
