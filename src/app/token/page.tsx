@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import heroImg from './hero-token.jpg'
+import TokenHero3D from '@/components/TokenHero3D'
 import landImg from './land-equity-token.jpg'
 import yieldImg from './yield-token.jpg'
 import riverImg from './river-token.jpg'
@@ -26,16 +26,7 @@ export default function TokenPage(){
           </div>
 
           <div className="flex items-center justify-center">
-            <figure className="w-full max-w-xl rounded-lg overflow-hidden shadow-lg group relative">
-              <Image
-                src={heroImg}
-                alt="Hero token"
-                className="object-cover w-full h-64 md:h-80 lg:h-96 transform transition-transform duration-700 group-hover:scale-105 group-hover:-translate-y-1"
-                width={1600}
-                height={900}
-              />
-              <div className="absolute inset-0 pointer-events-none bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 mix-blend-screen" />
-            </figure>
+            <TokenHero3D />
           </div>
         </div>
       </section>

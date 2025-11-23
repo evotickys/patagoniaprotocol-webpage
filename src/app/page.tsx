@@ -1,35 +1,33 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import RevealOnScroll from '@/components/RevealOnScroll'
+import Scene01Hero from '@/components/Scene01Hero'
+import Scene02Gap from '@/components/Scene02Gap'
+import Scene03Protocol from '@/components/Scene03Protocol'
+import Scene04Fractal from '@/components/Scene04Fractal'
+import Scene05Asset from '@/components/Scene05Asset'
+import Scene06River from '@/components/Scene06River'
 
 export default function Home() {
   return (
     <main>
-      {/* HERO */}
-      <section className="relative h-screen min-h-[700px] w-full flex items-center justify-center text-center text-white overflow-hidden">
-        <video id="heroVideo" className="absolute inset-0 h-full w-full object-cover" autoPlay muted loop playsInline poster="/assets/hero-poster.jpg">
-          <source src="/assets/hero.mp4" type="video/mp4" />
-        </video>
+      {/* HERO (Scene 01) */}
+      <Scene01Hero />
 
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/25 to-black/50" />
+      {/* SCENE 02 - GAP */}
+      <Scene02Gap />
 
-        <div className="relative z-10 max-w-4xl px-6 text-center">
-          <RevealOnScroll>
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight">Infraestructura Financiera para la Conservación.</h1>
-          </RevealOnScroll>
+      {/* SCENE 03 - PROTOCOL */}
+      <Scene03Protocol />
 
-          <RevealOnScroll>
-            <p className="mt-6 text-lg sm:text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto">Transformamos la protección de la naturaleza en una clase de activo líquido. Propiedad real, rentas hoteleras y seguridad jurídica en un solo instrumento fractal.</p>
-          </RevealOnScroll>
+      {/* SCENE 04 - FRACTAL */}
+      <Scene04Fractal />
 
-          <RevealOnScroll>
-            <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Link href="/portafolio" className="rounded-md bg-[#2a5a40] px-7 py-3 text-base font-bold text-white shadow-lg hover:bg-opacity-95 transform hover:scale-105 transition">Ver el Activo Piloto</Link>
-              <Link href="/token" className="rounded-md border border-white/30 bg-white/10 px-6 py-3 text-base font-semibold text-white hover:bg-white/5 transition">Cómo funciona el $PAT</Link>
-            </div>
-          </RevealOnScroll>
-        </div>
-      </section>
+      {/* SCENE 05 - ASSET (replaces previous ACTIVO section) */}
+      <Scene05Asset />
+
+      {/* SCENE 06 - RIVER (progress) */}
+      <Scene06River />
 
       {/* VALUE PROP */}
       <section className="py-20 bg-gray-50">
