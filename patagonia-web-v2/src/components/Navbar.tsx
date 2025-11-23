@@ -20,7 +20,7 @@ export default function Navbar(){
             <Link href="/token" className="text-sm md:text-base font-medium px-3 py-2 rounded-md border border-transparent hover:border-[#cfead9] hover:bg-[#f7fff9] transition">El Token</Link>
             <Link href="/portafolio" className="text-sm md:text-base font-medium px-3 py-2 rounded-md border border-transparent hover:border-[#cfead9] hover:bg-[#f7fff9] transition">El Portafolio</Link>
             <Link href="/club" className="text-sm md:text-base font-medium px-3 py-2 rounded-md border border-transparent hover:border-[#cfead9] hover:bg-[#f7fff9] transition">El Club</Link>
-            <Link href="/blog" className="text-sm md:text-base font-semibold px-3 py-2 rounded-md border border-[#2a5a40] bg-[#ecf8f0] text-[#2a5a40]">PataBlog</Link>
+            <Link href="/blog" className="text-sm md:text-base font-semibold px-3 py-2 rounded-md border border-[#2a5a40] bg-[#ecf8f0] text-[#2a5a40]">El PataBlog</Link>
           </nav>
         </div>
 
