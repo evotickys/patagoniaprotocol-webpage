@@ -18,20 +18,15 @@ function RotatingMesh() {
   )
 }
 
-export default function TokenHero3D() {
+export default function TokenHero3DImpl() {
   return (
     <div className="w-full h-80 md:h-96">
       <Canvas camera={{ position: [0, 0, 6], fov: 50 }}>
         <ambientLight intensity={0.6} />
         <directionalLight position={[5, 5, 5]} intensity={1} />
-        <SuspenseFallback />
         <RotatingMesh />
         <OrbitControls enablePan={false} enableZoom={false} autoRotate autoRotateSpeed={0.6} />
       </Canvas>
     </div>
   )
-}
-
-function SuspenseFallback() {
-  return null
 }
