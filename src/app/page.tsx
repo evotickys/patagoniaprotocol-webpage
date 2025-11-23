@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import RevealOnScroll from '@/components/RevealOnScroll'
 
 export default function Home() {
   return (
@@ -13,13 +14,20 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/25 to-black/50" />
 
         <div className="relative z-10 max-w-4xl px-6 text-center">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight">Infraestructura Financiera para la Conservación.</h1>
-          <p className="mt-6 text-lg sm:text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto">Transformamos la protección de la naturaleza en una clase de activo líquido. Propiedad real, rentas hoteleras y seguridad jurídica en un solo instrumento fractal.</p>
+          <RevealOnScroll>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight">Infraestructura Financiera para la Conservación.</h1>
+          </RevealOnScroll>
 
-          <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link href="/portafolio" className="rounded-md bg-[#2a5a40] px-7 py-3 text-base font-bold text-white shadow-lg hover:bg-opacity-95 transform hover:scale-105 transition">Ver el Activo Piloto</Link>
-            <Link href="/token" className="rounded-md border border-white/30 bg-white/10 px-6 py-3 text-base font-semibold text-white hover:bg-white/5 transition">Cómo funciona el $PAT</Link>
-          </div>
+          <RevealOnScroll>
+            <p className="mt-6 text-lg sm:text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto">Transformamos la protección de la naturaleza en una clase de activo líquido. Propiedad real, rentas hoteleras y seguridad jurídica en un solo instrumento fractal.</p>
+          </RevealOnScroll>
+
+          <RevealOnScroll>
+            <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+              <Link href="/portafolio" className="rounded-md bg-[#2a5a40] px-7 py-3 text-base font-bold text-white shadow-lg hover:bg-opacity-95 transform hover:scale-105 transition">Ver el Activo Piloto</Link>
+              <Link href="/token" className="rounded-md border border-white/30 bg-white/10 px-6 py-3 text-base font-semibold text-white hover:bg-white/5 transition">Cómo funciona el $PAT</Link>
+            </div>
+          </RevealOnScroll>
         </div>
       </section>
 
@@ -27,8 +35,12 @@ export default function Home() {
       <section className="py-20 bg-gray-50">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="lg:text-center max-w-3xl mx-auto">
-            <h2 className="text-base font-semibold leading-7 text-[#2a5a40] uppercase">El Fin de la Filantropía. El Inicio de la Ingeniería.</h2>
-            <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">La Tesis en 3 Pasos</p>
+            <RevealOnScroll>
+              <h2 className="text-base font-semibold leading-7 text-[#2a5a40] uppercase">El Fin de la Filantropía. El Inicio de la Ingeniería.</h2>
+            </RevealOnScroll>
+            <RevealOnScroll>
+              <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">La Tesis en 3 Pasos</p>
+            </RevealOnScroll>
           </div>
 
           <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-3">
@@ -63,31 +75,43 @@ export default function Home() {
       <section className="py-20 bg-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-            <div className="h-96 w-full rounded-lg overflow-hidden bg-gray-200 relative">
+            <RevealOnScroll className="h-96 w-full rounded-lg overflow-hidden bg-gray-200 relative">
               <Image src="/assets/rio.jpeg" alt="Ventisquero Grosse" fill className="object-cover" />
-            </div>
+            </RevealOnScroll>
             <div>
-              <p className="text-sm font-semibold text-[#2a5a40] uppercase">PILOTO 001</p>
-              <h2 className="mt-2 text-3xl font-bold text-gray-900">Ventisquero Grosse</h2>
-              <p className="mt-4 text-gray-600">Un ecosistema prístino en la Región de Aysén, asegurado bajo el Protocolo.</p>
+              <RevealOnScroll>
+                <p className="text-sm font-semibold text-[#2a5a40] uppercase">PILOTO 001</p>
+                <h2 className="mt-2 text-3xl font-bold text-gray-900">Ventisquero Grosse</h2>
+                <p className="mt-4 text-gray-600">Un ecosistema prístino en la Región de Aysén, asegurado bajo el Protocolo.</p>
+              </RevealOnScroll>
 
               <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4 text-gray-700">
-                <div className="bg-gray-50 p-4 rounded-md shadow-sm">
-                  <p className="text-sm font-semibold">900 Hectáreas Conservadas</p>
-                </div>
-                <div className="bg-gray-50 p-4 rounded-md shadow-sm">
-                  <p className="text-sm font-semibold">USD 3.0M Valorización Inicial</p>
-                </div>
-                <div className="bg-gray-50 p-4 rounded-md shadow-sm">
-                  <p className="text-sm font-semibold">Perpetuo Blindaje Legal (DRC)</p>
-                </div>
-                <div className="bg-gray-50 p-4 rounded-md shadow-sm">
-                  <p className="text-sm font-semibold">12% Proyección TIR (Est.)</p>
-                </div>
+                <RevealOnScroll>
+                  <div className="bg-gray-50 p-4 rounded-md shadow-sm">
+                    <p className="text-sm font-semibold">900 Hectáreas Conservadas</p>
+                  </div>
+                </RevealOnScroll>
+                <RevealOnScroll>
+                  <div className="bg-gray-50 p-4 rounded-md shadow-sm">
+                    <p className="text-sm font-semibold">USD 3.0M Valorización Inicial</p>
+                  </div>
+                </RevealOnScroll>
+                <RevealOnScroll>
+                  <div className="bg-gray-50 p-4 rounded-md shadow-sm">
+                    <p className="text-sm font-semibold">Perpetuo Blindaje Legal (DRC)</p>
+                  </div>
+                </RevealOnScroll>
+                <RevealOnScroll>
+                  <div className="bg-gray-50 p-4 rounded-md shadow-sm">
+                    <p className="text-sm font-semibold">12% Proyección TIR (Est.)</p>
+                  </div>
+                </RevealOnScroll>
               </div>
 
               <div className="mt-6">
-                <Link href="/portafolio" className="inline-block rounded bg-[#2a5a40] px-6 py-3 text-white font-bold">Explorar el Portafolio</Link>
+                <RevealOnScroll>
+                  <Link href="/portafolio" className="inline-block rounded bg-[#2a5a40] px-6 py-3 text-white font-bold">Explorar el Portafolio</Link>
+                </RevealOnScroll>
               </div>
             </div>
           </div>

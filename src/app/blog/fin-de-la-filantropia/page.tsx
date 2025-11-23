@@ -1,5 +1,6 @@
 import { findPost } from '@/lib/posts'
 import { Linkedin, X } from 'lucide-react'
+import RevealOnScroll from '@/components/RevealOnScroll'
 
 export default function PostPage(){
   const post = findPost('fin-de-la-filantropia');
@@ -8,9 +9,11 @@ export default function PostPage(){
     <main className="min-h-screen">
       <div className="post-hero py-28 text-white" style={{backgroundImage:`linear-gradient(rgba(0,0,0,0.35),rgba(0,0,0,0.35)), url('/imagenes-blog/fin-de-la-filantropia/hero.jpg'), url('${post.image}')`, backgroundSize:'cover', backgroundPosition:'center'}}>
         <div className="container mx-auto max-w-3xl px-4 text-center">
-          <div className="text-sm font-mono text-[#dff0e0] uppercase">{post.category}</div>
-          <h1 className="mt-4 text-3xl sm:text-4xl font-extrabold">{post.title}</h1>
-          <div className="mt-3 text-sm opacity-90">{post.date} · {post.author}</div>
+          <RevealOnScroll>
+            <div className="text-sm font-mono text-[#dff0e0] uppercase">{post.category}</div>
+            <h1 className="mt-4 text-3xl sm:text-4xl font-extrabold">{post.title}</h1>
+            <div className="mt-3 text-sm opacity-90">{post.date} · {post.author}</div>
+          </RevealOnScroll>
         </div>
       </div>
 
