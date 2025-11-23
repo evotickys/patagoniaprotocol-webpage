@@ -9,21 +9,20 @@ export default function Scene06River(){
   const reduced = usePrefersReducedMotion()
   const ref = useRef<HTMLElement | null>(null)
   const rafRef = useRef<number | null>(null)
-  const [percent, setPercent] = useState(0)
+  const [percent, setPercent] = useState(() => reduced ? 40 : 0)
 
   useEffect(()=>{
     if (reduced) {
-      setPercent(0.4 * 100) // show a gentle static state when reduced motion
+      // when reduced motion is enabled we keep the static percent (initial state)
       return
     }
-
-    const el = ref.current
-    if (!el) return
 
     function onScroll(){
       if (rafRef.current) cancelAnimationFrame(rafRef.current)
       rafRef.current = requestAnimationFrame(()=>{
-        const rect = el.getBoundingClientRect()
+        const node = ref.current
+        if (!node) return
+        const rect = node.getBoundingClientRect()
         const vh = window.innerHeight || document.documentElement.clientHeight
         // compute how much the section has been scrolled into view (0..1)
         const progress = clamp((vh - rect.top) / (vh + rect.height), 0, 1)
@@ -42,10 +41,10 @@ export default function Scene06River(){
   },[reduced])
 
   return (
-    <section ref={ref as any} className="py-16 bg-[#f7faf9]">
+    <section ref={ref} className="py-16 bg-[#f7faf9]">
       <div className="mx-auto max-w-6xl px-6 text-center">
         <h2 className="text-2xl font-bold text-gray-900">Liquidez que crea Vida.</h2>
-        <p className="mt-3 text-gray-600 max-w-2xl mx-auto">¿Cómo crece el valor sin diluirte? Usamos el "Modelo del Río". Cada nueva emisión de tokens se vende con una prima estratégica (+25%) que no va a utilidades, sino que llena una <strong>Represa de Tesorería</strong>. Cuando el embalse alcanza su nivel crítico, el capital se libera para adquirir el siguiente activo al contado, aumentando instantáneamente el respaldo de tierra por cada token en circulación.</p>
+        <p className="mt-3 text-gray-600 max-w-2xl mx-auto">¿Cómo crece el valor sin diluirte? Usamos el &ldquo;Modelo del Río&rdquo;. Cada nueva emisión de tokens se vende con una prima estratégica (+25%) que no va a utilidades, sino que llena una <strong>Represa de Tesorería</strong>. Cuando el embalse alcanza su nivel crítico, el capital se libera para adquirir el siguiente activo al contado, aumentando instantáneamente el respaldo de tierra por cada token en circulación.</p>
 
         <div className="mt-6 flex items-center justify-center gap-4">
           <div className="px-4 py-2 bg-[#eef3ea] rounded-md text-sm font-semibold">ESTADO REPRESA: <span className="text-[#2a5a40]">{percent < 100 ? 'LLENANDO' : 'LLENA'}</span></div>
