@@ -6,7 +6,7 @@ export default function PostPage(){
   if(!post) return <div className="p-8">Post no encontrado</div>
   return (
     <main className="min-h-screen">
-      <div className="post-hero py-28 text-white" style={{backgroundImage:`linear-gradient(rgba(0,0,0,0.35),rgba(0,0,0,0.35)), url('${post.image}')`, backgroundSize:'cover', backgroundPosition:'center'}}>
+      <div className="post-hero py-28 text-white" style={{backgroundImage:`linear-gradient(rgba(0,0,0,0.35),rgba(0,0,0,0.35)), url('/imagenes-blog/que-es-patagonia-protocol/hero.jpg'), url('${post.image}')`, backgroundSize:'cover', backgroundPosition:'center'}}>
         <div className="container mx-auto max-w-3xl px-4 text-center">
           <div className="text-sm font-mono text-[#dff0e0] uppercase">{post.category}</div>
           <h1 className="mt-4 text-3xl sm:text-4xl font-extrabold">{post.title}</h1>

@@ -17,7 +17,7 @@ export const POSTS: Post[] = [
     category: 'Tesis de Inversión',
     author: 'Eugenio Voticky',
     excerpt: 'Un parque privado es un pasivo financiero feroz. Analizamos por qué el modelo del "mecenas" está roto y cómo transformar los costos de conservación en infraestructura de inversión rentable.',
-    image: '/imagenes-blog/fin-de-la-filantropia.svg',
+    image: '/imagenes-blog/fin-de-la-filantropia/hero.jpg',
     contentHtml: `
       <p><strong>Por: Eugenio Voticky</strong></p>
 
@@ -76,7 +76,7 @@ export const POSTS: Post[] = [
     category: 'Infraestructura',
     author: 'Eugenio Voticky',
     excerpt: 'La tierra es el hardware; nosotros construimos el software. Explicamos por qué lotear parcelas es ineficiente y cómo nuestro Protocolo resuelve la fragmentación.',
-    image: '/imagenes-blog/que-es-patagonia-protocol.svg',
+    image: '/imagenes-blog/que-es-patagonia-protocol/hero.jpg',
     contentHtml: `
       <p><strong>No somos una inmobiliaria; somos un sistema operativo.</strong></p>
 
@@ -110,7 +110,7 @@ export const POSTS: Post[] = [
     category: 'Tokenomics',
     author: 'Eugenio Voticky',
     excerpt: 'No vendemos coordenadas GPS aisladas. Usamos la geometría fractal para crear un activo 3-en-1 que contiene el ADN completo del proyecto en cada unidad.',
-    image: '/imagenes-blog/teoria-del-fractal.svg',
+    image: '/imagenes-blog/teoria-del-fractal/hero.jpg',
     contentHtml: `
       <p>En el mundo de las criptomonedas, la mayoría de los tokens son "fichas de casino". Representan una apuesta sobre el sentimiento del mercado, pero si abres la ficha, adentro no hay nada. Solo aire.</p>
 

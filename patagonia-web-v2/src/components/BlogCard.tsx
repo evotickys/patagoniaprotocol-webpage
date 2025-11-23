@@ -5,12 +5,25 @@ import Image from 'next/image'
 import type { Post } from '@/lib/posts';
 
 export default function BlogCard({post}:{post:Post}){
-  const [src, setSrc] = useState(post.image || '')
+  // Try JPEG first (hero.jpg or thumb.jpg), fall back to the SVG provided in `post.image`, then to placeholder
+  const preferJpg = (path: string) => path.replace(/\.svg$/i, '.jpg')
+  const [src, setSrc] = useState(() => {
+    if (!post.image) return '/imagenes-blog/placeholder.svg'
+    return preferJpg(post.image)
+  })
   return (
     <article className="group block rounded-lg overflow-hidden shadow-sm bg-white transform transition hover:shadow-lg hover:-translate-y-1">
       <Link href={`/blog/${post.slug}`} className="block">
         <div className="relative h-48 overflow-hidden bg-gray-100">
-          <Image src={src} alt={post.title} fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover transition-transform duration-500 group-hover:scale-105" onError={()=>setSrc('/imagenes-blog/placeholder.svg')} />
+          <Image src={src} alt={post.title} fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover transition-transform duration-500 group-hover:scale-105" onError={()=>{
+            // if current src was the preferred JPG, try the SVG fallback (post.image)
+            if (src.endsWith('.jpg') && post.image) {
+              setSrc(post.image)
+              return
+            }
+            // otherwise use the local placeholder
+            setSrc('/imagenes-blog/placeholder.svg')
+          }} />
         </div>
         <div className="p-5">
           <div className="text-sm text-gray-500">{post.category} · {post.date}</div>
