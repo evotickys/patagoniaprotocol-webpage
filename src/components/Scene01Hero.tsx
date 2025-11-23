@@ -24,11 +24,11 @@ export default function Scene01Hero(){
   const [open,setOpen] = useState(false)
 
   return (
-    <section className="relative h-screen min-h-[680px] w-full flex items-center text-white overflow-hidden bg-[#050A08]">
+    <section className="relative h-screen min-h-[640px] w-full flex items-center text-white overflow-hidden bg-[#07120f]">
       {/* Video / Media */}
       <div className="absolute inset-0 z-0">
         <Image src="/assets/hero-1.jpg" alt="Hero" fill className="object-cover" />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/30 to-black/60" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/20 to-black/50" />
         {/* gold scan overlay */}
         <div className="absolute inset-0 pointer-events-none">
           <div className="w-full h-full mix-blend-screen opacity-50" style={{background: 'linear-gradient(90deg, transparent, rgba(212,175,55,0.25), transparent)', animation: 'gold-scan 3s linear infinite'}} />

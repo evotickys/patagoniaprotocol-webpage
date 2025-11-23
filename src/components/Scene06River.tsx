@@ -42,7 +42,7 @@ export default function Scene06River(){
   },[reduced])
 
   return (
-    <section ref={ref as any} className="py-20 bg-white">
+    <section ref={ref as any} className="py-16 bg-[#f7faf9]">
       <div className="mx-auto max-w-6xl px-6 text-center">
         <h2 className="text-2xl font-bold text-gray-900">Liquidez que crea Vida.</h2>
         <p className="mt-3 text-gray-600 max-w-2xl mx-auto">¿Cómo crece el valor sin diluirte? Usamos el "Modelo del Río". Cada nueva emisión de tokens se vende con una prima estratégica (+25%) que no va a utilidades, sino que llena una <strong>Represa de Tesorería</strong>. Cuando el embalse alcanza su nivel crítico, el capital se libera para adquirir el siguiente activo al contado, aumentando instantáneamente el respaldo de tierra por cada token en circulación.</p>

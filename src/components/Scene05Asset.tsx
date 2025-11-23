@@ -4,10 +4,11 @@ import React from 'react'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
 import RevealOnScroll from '@/components/RevealOnScroll'
+import { dur, VIEWPORT } from '@/lib/anim'
 
 export default function Scene05Asset(){
   return (
-    <section className="py-20 bg-white">
+    <section className="pt-8 pb-16 bg-[#f7faf9] lg:-mt-20 relative z-10">
       <div className="mx-auto max-w-6xl px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
           <div className="order-2 lg:order-1">
@@ -51,8 +52,8 @@ export default function Scene05Asset(){
             </div>
           </div>
 
-          <div className="order-1 lg:order-2 h-96 w-full rounded-lg overflow-hidden bg-gray-700 relative">
-            <motion.div initial={{opacity:0, scale:0.98}} whileInView={{opacity:1, scale:1}} transition={{duration:0.8}} className="relative h-full w-full">
+          <div className="order-1 lg:order-2 h-80 w-full rounded-lg overflow-hidden bg-gray-700 relative">
+            <motion.div initial={{opacity:0, scale:0.98}} whileInView={{opacity:1, scale:1}} viewport={VIEWPORT} transition={{duration: dur(0.7)}} className="relative h-full w-full">
               <Image src="/assets/hero-5.jpg" alt="Ventisquero Grosse" fill className="object-cover" />
               <div className="absolute top-4 right-4 bg-black/60 text-white rounded-md p-3 text-right">
                 <div className="text-xs text-gray-300">BIOMA</div>
