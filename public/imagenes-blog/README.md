@@ -17,7 +17,7 @@ Convenciones:
 
 Cómo organizar automáticamente (PowerShell):
 
-  cd patagonia-web-v2
+  cd repo-root (ejecuta desde la raíz del repositorio)
   .\scripts\organize-images.ps1
 
 Si prefieres que yo mueva las imágenes por ti, súbelas al repo dentro de `public/imagenes-blog/` y ejecuto el script o hago los cambios necesarios.

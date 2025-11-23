@@ -2,7 +2,7 @@
 Organize blog images into per-post folders.
 Run from repository root (PowerShell):
 
-  cd patagonia-web-v2
+  cd repo-root
   .\scripts\organize-images.ps1
 
 This script will:
