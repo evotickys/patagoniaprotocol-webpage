@@ -1,124 +1,176 @@
+"use client"
+import React, { useRef, useEffect } from 'react'
+import Image from 'next/image'
+import { motion, useAnimation } from 'framer-motion'
+import { dur, VIEWPORT } from '@/lib/anim'
+
 export default function ProtocolPage(){
+  const strokeControls = useAnimation()
+  const svgRef = useRef<SVGSVGElement | null>(null)
+
+  useEffect(() => {
+    // start a subtle draw when mounted
+    strokeControls.start(i => ({ strokeDashoffset: 0, transition: { duration: dur(1.2 + i * 0.4), ease: 'easeInOut' } }))
+  }, [strokeControls])
+
+  const pathVariant = {
+    hidden: { strokeDashoffset: 1 },
+    visible: (i: number) => ({ strokeDashoffset: 0, transition: { duration: dur(1 + i * 0.35), ease: 'easeInOut' } })
+  }
+
   return (
-    <main className="container mx-auto px-4 py-12">
-      {/* HERO: System Architecture */}
-      <section id="hero" className="relative bg-white rounded-xl shadow-lg overflow-hidden max-w-6xl mx-auto">
-        <div className="absolute inset-0 bg-[url('/assets/protocol-hero.jpg')] bg-cover bg-center opacity-60" />
-        <div className="relative z-10 px-6 py-20 md:px-16 md:py-28">
-          <div className="max-w-3xl mx-auto text-center">
-            <div className="text-sm font-mono text-[#2a5a40] uppercase">SYSTEM ARCHITECTURE v1.0</div>
-            <h1 className="mt-4 text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900">El Sistema Operativo de la Conservación.</h1>
-            <p className="mt-6 text-lg text-gray-700">La tierra es el Hardware: finito, valioso, pero inerte. Patagonia Protocol es el Software: una capa de ingeniería legal y financiera que se instala sobre el territorio para hacerlo líquido, rentable y perpetuo.</p>
-          </div>
-        </div>
-      </section>
+    <main className="min-h-screen bg-[#071412] text-white">
+      {/* Scene 01 - La Definición */}
+      <section className="relative overflow-hidden">
+        <div className="relative h-[72vh] md:h-[80vh]">
+          <Image src="/assets/el-protocolo-scene-1.jpg" alt="Patagonian valley" fill className="object-cover brightness-50" />
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/30 to-black/60" />
 
-      {/* THE STACK */}
-      <section id="the-stack" className="mt-12 max-w-6xl mx-auto">
-        <div className="px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h2 className="text-base font-semibold text-[#2a5a40] uppercase">La Arquitectura del Protocolo</h2>
-            <p className="mt-2 text-2xl font-bold text-gray-900">La Pila Tecnológica</p>
-          </div>
-
-          <div className="mt-10 grid grid-cols-1 md:grid-cols-4 gap-6 items-start">
-            <div className="flex flex-col items-start p-6 bg-white rounded-lg shadow">
-              <div className="flex items-center justify-center h-10 w-10 rounded bg-[#2a5a40]/10 text-[#2a5a40]">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="#2a5a40" strokeWidth="1.5"><circle cx="12" cy="12" r="3"/></svg>
-              </div>
-              <h3 className="mt-4 text-lg font-semibold">Layer 4: La Capa de Valor (Network)</h3>
-              <p className="mt-2 text-sm text-gray-600"><strong>Componente:</strong> Patagonia Token ($PAT).</p>
-              <p className="text-sm text-gray-600">Función: La distribución. Securitizamos los derechos económicos y de uso en unidades fractales líquidas, permitiendo la entrada y salida de capital sin fricción.</p>
-            </div>
-
-            <div className="flex flex-col items-start p-6 bg-white rounded-lg shadow">
-              <div className="flex items-center justify-center h-10 w-10 rounded bg-[#2a5a40]/10 text-[#2a5a40]">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="#2a5a40" strokeWidth="1.5"><path d="M3 12h18"/></svg>
-              </div>
-              <h3 className="mt-4 text-lg font-semibold">Layer 3: La Interfaz Operativa (Application)</h3>
-              <p className="mt-2 text-sm text-gray-600"><strong>Componente:</strong> Modelo de Concesión (OpCo).</p>
-              <p className="text-sm text-gray-600">Función: La generación de flujo. Licitamos la operación a terceros expertos que inyectan capital (CAPEX) y pagan arriendo, eliminando riesgo operativo.</p>
-            </div>
-
-            <div className="flex flex-col items-start p-6 bg-white rounded-lg shadow">
-              <div className="flex items-center justify-center h-10 w-10 rounded bg-[#2a5a40]/10 text-[#2a5a40]">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="#2a5a40" strokeWidth="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/></svg>
-              </div>
-              <h3 className="mt-4 text-lg font-semibold">Layer 2: El Kernel Legal (Firmware)</h3>
-              <p className="mt-2 text-sm text-gray-600"><strong>Componente:</strong> SpA + Derecho Real de Conservación (DRC).</p>
-              <p className="text-sm text-gray-600">Función: El código inmutable. Blindamos la tierra jurídicamente a perpetuidad; el DRC actúa como un candado que prohíbe el desarrollo inmobiliario destructivo.</p>
-            </div>
-
-            <div className="flex flex-col items-start p-6 bg-white rounded-lg shadow">
-              <div className="flex items-center justify-center h-10 w-10 rounded bg-[#2a5a40]/10 text-[#2a5a40]">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="#2a5a40" strokeWidth="1.5"><path d="M12 2l7 4v8l-7 4-7-4V6z"/></svg>
-              </div>
-              <h3 className="mt-4 text-lg font-semibold">Layer 1: El Activo Base (Hardware)</h3>
-              <p className="mt-2 text-sm text-gray-600"><strong>Componente:</strong> Tierra Prístina + Capital Natural.</p>
-              <p className="text-sm text-gray-600">Función: El subyacente físico. Seleccionamos activos irreproducibles con alta capacidad de captura de carbono y potencial turístico.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* EL MOTOR */}
-      <section id="motor" className="mt-16 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center">
-          <h2 className="text-base font-semibold text-[#2a5a40] uppercase">Separación de Poderes</h2>
-          <p className="mt-2 text-2xl font-bold text-gray-900">El Motor (PropCo vs. OpCo)</p>
-          <p className="mt-4 text-gray-600 max-w-3xl mx-auto">Resolvemos el mayor fallo de la conservación privada: el riesgo de gestión.</p>
-        </div>
-
-        <div className="mt-8 grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
-          <div className="bg-white p-6 rounded-lg shadow">
-            <h3 className="text-xl font-semibold text-gray-900">PropCo (Nosotros)</h3>
-            <p className="mt-3 text-gray-600"><strong>Rol:</strong> Dueños del Activo (Asset Allocators).</p>
-            <p className="mt-2 text-gray-600"><strong>Responsabilidad:</strong> Custodia legal, monitoreo ambiental y emisión del token.</p>
-            <p className="mt-2 text-gray-600"><strong>Ingreso:</strong> Recibe el Canon de Arriendo + % de Ventas Brutas.</p>
-          </div>
-
-          <div className="bg-white p-6 rounded-lg shadow">
-            <h3 className="text-xl font-semibold text-gray-900">OpCo (El Operador)</h3>
-            <p className="mt-3 text-gray-600"><strong>Rol:</strong> Gestor Turístico (Hospitality Partner).</p>
-            <p className="mt-2 text-gray-600"><strong>Responsabilidad:</strong> Staff, marketing, mantenimiento y experiencia del huésped.</p>
-            <p className="mt-2 text-gray-600"><strong>Ingreso:</strong> Se queda con la utilidad operativa del hotel tras pagar el arriendo.</p>
-          </div>
-        </div>
-
-        <div className="mt-8 flex items-center justify-center">
-          <svg className="w-full max-w-2xl" viewBox="0 0 800 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+          {/* SVG topographic/grid overlay */}
+          <svg viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" className="absolute inset-0 w-full h-full pointer-events-none">
             <defs>
-              <linearGradient id="g" x1="0" x2="1">
-                <stop offset="0%" stopColor="#2a5a40" stopOpacity="0.9" />
-                <stop offset="100%" stopColor="#6aa87a" stopOpacity="0.9" />
+              <linearGradient id="gold" x1="0" x2="1">
+                <stop offset="0%" stopColor="#D4AF37" stopOpacity="0.95" />
+                <stop offset="100%" stopColor="#C0892B" stopOpacity="0.95" />
               </linearGradient>
             </defs>
-            <rect x="50" y="40" width="260" height="120" rx="12" fill="#f8faf8" stroke="#d1ead8"/>
-            <text x="180" y="75" textAnchor="middle" fontSize="16" fill="#1f2937">PropCo</text>
-            <text x="180" y="100" textAnchor="middle" fontSize="12" fill="#4b5563">Custodia · Token · Monitoreo</text>
-
-            <rect x="490" y="40" width="260" height="120" rx="12" fill="#f8faf8" stroke="#d1ead8"/>
-            <text x="620" y="75" textAnchor="middle" fontSize="16" fill="#1f2937">OpCo</text>
-            <text x="620" y="100" textAnchor="middle" fontSize="12" fill="#4b5563">Operación · Marketing · Experiencia</text>
-
-            <path d="M310 100 H490" stroke="url(#g)" strokeWidth="4" strokeLinecap="round" markerEnd="url(#arrow)" markerStart="url(#arrow)" />
-            <defs>
-              <marker id="arrow" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto-start-reverse">
-                <path d="M0 0 L10 5 L0 10 z" fill="#2a5a40" />
-              </marker>
-            </defs>
+            <motion.path d="M40 700 C200 600, 400 650, 600 600, 800 550, 1000 600" stroke="url(#gold)" strokeWidth="1" fill="none"
+              initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: dur(1.8), ease: 'easeInOut' }} />
+            <motion.path d="M40 640 C220 560, 420 590, 620 560, 820 530, 1000 560" stroke="url(#gold)" strokeWidth="1" fill="none"
+              initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: dur(2.0), ease: 'easeInOut', delay: 0.2 }} />
+            <motion.rect x={60} y={60} width={1080} height={680} stroke="url(#gold)" strokeWidth={1} fill="none" initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: dur(1.6), delay: 0.1 }} />
           </svg>
+
+          <div className="absolute inset-0 flex items-center justify-center">
+            <div className="max-w-3xl text-center px-6">
+              <div className="font-mono text-sm text-amber-200 uppercase tracking-wide">Invisible Architecture</div>
+              <h1 className="mt-4 text-3xl md:text-5xl lg:text-6xl font-serif font-bold">Arquitectura para lo Intangible.</h1>
+              <p className="mt-4 text-lg md:text-xl text-gray-200 max-w-2xl mx-auto">La tierra es valiosa, pero frágil y caótica. Patagonia Protocol es la infraestructura invisible —legal y financiera— que construimos sobre el territorio para darle solidez, liquidez y propósito.</p>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* ESTANDAR */}
-      <section id="estandar" className="mt-16 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
-        <div className="text-center">
-          <h2 className="text-base font-semibold text-[#2a5a40] uppercase">Un Código, Múltiples Biomas</h2>
-          <p className="mt-2 text-2xl font-bold text-gray-900">El Estándar</p>
+      {/* Scene 02 - La Estructura (Exploded View) */}
+      <section className="py-20">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="text-center">
+            <h2 className="text-base font-mono text-amber-200 uppercase">La Estructura</h2>
+            <p className="mt-2 text-2xl font-serif font-bold">La Pila Constructiva</p>
+            <p className="mt-4 text-gray-300 max-w-2xl mx-auto">Descomponemos el paisaje en capas —como en un corte arquitectónico— para mostrar cómo cada elemento sostiene al siguiente.</p>
+          </div>
+
+          <div className="mt-12 lg:flex lg:items-start lg:gap-8">
+            {/* Image on the left (smaller) */}
+            <div className="lg:flex-1 flex items-center">
+              <div className="w-full rounded-lg overflow-hidden h-[680px] md:h-[780px] lg:h-[780px] flex items-center justify-center bg-black">
+                <Image src="/assets/el-protocolo-scene-2.jpg" alt="Exploded landscape layers" width={1200} height={640} className="w-auto h-full object-contain" />
+              </div>
+            </div>
+
+            {/* Stacked levels on the right: 4 (top) -> 1 (bottom). They collectively match the image height via fixed container height. */}
+            <motion.div className="mt-6 lg:mt-0 lg:w-[360px] lg:flex lg:flex-col lg:justify-between h-[680px] md:h-[780px] lg:h-[780px]"
+              initial="hidden" whileInView="show" viewport={VIEWPORT}
+              variants={{
+                hidden: {},
+                show: { transition: { staggerChildren: 0.24 } }
+              }}
+            >
+              {/** item variant reused for all cards */}
+              {
+                (() => {
+                  const item = {
+                    hidden: { x: 30, opacity: 0 },
+                    show: (i: number) => ({ x: 0, opacity: 1, transition: { duration: dur(0.6 + i * 0.05), ease: 'easeOut' } })
+                  }
+                  return (
+                    <>
+                      <motion.div variants={item} custom={0} className="flex-1 bg-[#081816]/40 p-6 rounded-lg border border-amber-900 mb-3 lg:mb-2 flex flex-col justify-center">
+                        <div className="font-mono text-xs text-amber-200 uppercase">NIVEL 4: LAS LLAVES</div>
+                        <h3 className="mt-2 font-serif text-xl font-bold">Patagonia Token ($PAT).</h3>
+                        <p className="mt-2 text-gray-300">El título de propiedad. Dividimos los derechos en unidades fractales líquidas, permitiendo entrar y salir del edificio sin demolerlo.</p>
+                      </motion.div>
+
+                      <motion.div variants={item} custom={1} className="flex-1 bg-[#081816]/40 p-6 rounded-lg border border-amber-900 mb-3 lg:mb-2 flex flex-col justify-center">
+                        <div className="font-mono text-xs text-amber-200 uppercase">NIVEL 3: LAS INSTALACIONES</div>
+                        <h3 className="mt-2 font-serif text-xl font-bold">Concesión Operativa.</h3>
+                        <p className="mt-2 text-gray-300">Las cañerías y la energía. Un operador experto inyecta capital de trabajo y gestiona el turismo, generando el flujo que alimenta el edificio.</p>
+                      </motion.div>
+
+                      <motion.div variants={item} custom={2} className="flex-1 bg-[#081816]/40 p-6 rounded-lg border border-amber-900 mb-3 lg:mb-2 flex flex-col justify-center">
+                        <div className="font-mono text-xs text-amber-200 uppercase">NIVEL 2: LOS CIMIENTOS</div>
+                        <h3 className="mt-2 font-serif text-xl font-bold">Gobernanza Corporativa.</h3>
+                        <p className="mt-2 text-gray-300">La zapata de concreto. Nos blindamos con Estatutos de Supermayoría que impiden la venta del activo sin consenso total.</p>
+                      </motion.div>
+
+                      <motion.div variants={item} custom={3} className="flex-1 bg-[#081816]/40 p-6 rounded-lg border border-amber-900 flex flex-col justify-center">
+                        <div className="font-mono text-xs text-amber-200 uppercase">NIVEL 1: EL SUELO</div>
+                        <h3 className="mt-2 font-serif text-xl font-bold">Tierra Prístina.</h3>
+                        <p className="mt-2 text-gray-300">La base física. Seleccionamos activos irreproducibles (Glaciares, Bosques) que actúan como el suelo firme de la inversión.</p>
+                      </motion.div>
+                    </>
+                  )
+                })()
+              }
+            </motion.div>
+          </div>
         </div>
-        <div className="mt-6 bg-white p-6 rounded-lg shadow max-w-4xl mx-auto">
-          <p className="text-gray-700">Patagonia Protocol no es un fondo de inversión creado para un solo predio. Es un estándar replicable. Una vez validado el código legal y financiero en Ventisquero Grosse (Nodo 01), el Protocolo se expandirá para proteger activos en el Desierto de Atacama, la Selva Valdiviana y la Estepa Magallánica. Invertir en el Protocolo es invertir en la máquina que escalará la conservación en el siglo XXI.</p>
+      </section>
+
+      {/* Scene 03 - El Motor (PropCo vs OpCo) */}
+      <section className="py-20 bg-[#2b3132]">
+        <div className="max-w-6xl mx-auto px-6">
+          <motion.div initial={{ y: 20, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} viewport={VIEWPORT} transition={{ duration: dur(0.6) }} className="relative -mt-12 p-6 md:p-10 rounded-2xl bg-[#222829] shadow-2xl">
+            <div className="text-center">
+              <h2 className="text-base font-mono text-amber-200 uppercase">El Motor</h2>
+              <p className="mt-2 text-2xl font-serif font-bold">PropCo vs. OpCo</p>
+              <p className="mt-4 text-gray-300 max-w-2xl mx-auto">El error clásico es mezclar el ladrillo con el servicio. Nosotros separamos la tenencia de la operación para blindar el capital.</p>
+            </div>
+
+            <div className="mt-10 grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+              <div className="relative rounded-lg overflow-hidden bg-[#071412]">
+                <Image src="/assets/el-protocolo-scene-3a.jpg" alt="PropCo visual" width={1200} height={800} className="object-cover brightness-75" />
+                <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-transparent flex items-start pt-6 md:pt-8">
+                  <div className="p-8">
+                    <div className="font-mono text-xs text-amber-200 uppercase">PROPCO</div>
+                    <h3 className="mt-2 font-serif text-2xl font-bold">El Custodio (Permanencia)</h3>
+                    <p className="mt-2 text-gray-300">Nosotros ponemos el escenario. Somos dueños de la tierra, la infraestructura y el blindaje legal. Nuestra misión es la plusvalía a largo plazo y la protección del activo contra la entropía. Nosotros ponemos el Silencio.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="relative rounded-lg overflow-hidden bg-[#071412]">
+                <Image src="/assets/el-protocolo-scene-3b.jpg" alt="OpCo visual" width={1200} height={800} className="object-cover brightness-75" />
+                <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-transparent flex items-start justify-end pt-6 md:pt-8">
+                  <div className="p-8 text-right">
+                    <div className="font-mono text-xs text-amber-200 uppercase">OPCO</div>
+                    <h3 className="mt-2 font-serif text-2xl font-bold">El Anfitrión (Experiencia)</h3>
+                    <p className="mt-2 text-gray-300">Ellos ponen la música. Un operador de clase mundial inyecta el capital de trabajo, el staff y el riesgo hotelero. Su misión es llenar las habitaciones y generar el flujo de caja que paga tu dividendo. Ellos ponen la Vida.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Scene 04 - La Escala (The Standard) */}
+      <section className="py-20 bg-[#2b3132]">
+        <div className="max-w-6xl mx-auto px-6 text-center">
+          <h2 className="text-base font-mono text-amber-200 uppercase">La Escala</h2>
+          <p className="mt-2 text-2xl font-serif font-bold">Un Plano, Múltiples Edificios</p>
+          <p className="mt-4 text-gray-300 max-w-2xl mx-auto">No diseñamos esto para un solo terreno. Creamos un estándar constructivo replicable. Una vez levantado el Edificio 01 (Grosse), usaremos los mismos planos para levantar el Edificio 02 en Atacama.</p>
+
+          <div className="mt-10 relative rounded-lg overflow-hidden">
+            <Image src="/assets/el-protocolo-scene-4.jpg" alt="Map with buildings" width={1400} height={700} className="object-cover brightness-60" />
+            <svg viewBox="0 0 1400 700" className="absolute inset-0 w-full h-full pointer-events-none">
+              <defs>
+                <linearGradient id="copper" x1="0" x2="1"><stop offset="0%" stopColor="#D4AF37"/><stop offset="100%" stopColor="#C0892B"/></linearGradient>
+              </defs>
+              <motion.circle cx={300} cy={300} r={44} stroke="url(#copper)" strokeWidth={2} fill="none" initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: dur(1.2) }} />
+              <motion.path d="M300 344 L480 220" stroke="url(#copper)" strokeWidth={1} fill="none" initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: dur(1.4), delay: 0.1 }} />
+            </svg>
+          </div>
         </div>
       </section>
     </main>
