@@ -2,6 +2,8 @@
 
 import React from 'react'
 import { motion } from 'framer-motion'
+import { dur } from '@/lib/anim'
+import usePrefersReducedMotion from '@/hooks/usePrefersReducedMotion'
 
 type TokenFloatProps = {
   className?: string
@@ -10,6 +12,7 @@ type TokenFloatProps = {
 }
 
 export default function TokenFloat({ className, onClick, ariaLabel = 'Unirse a la espera' }: TokenFloatProps){
+  const prefersReduced = usePrefersReducedMotion()
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (!onClick) return
     if (e.key === 'Enter' || e.key === ' ') {
@@ -27,8 +30,8 @@ export default function TokenFloat({ className, onClick, ariaLabel = 'Unirse a l
       onClick={onClick}
       className={`${className ?? ''} ${onClick ? 'cursor-pointer focus:outline-none focus:ring-2 focus:ring-amber-300 rounded-full' : ''}`}
       initial={{ scale: 0.9, opacity: 0.85 }}
-      animate={{ scale: [0.96, 1.04, 0.96], rotate: [0, 8, -8, 0] }}
-      transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
+      animate={prefersReduced ? undefined : { scale: [0.96, 1.04, 0.96], rotate: [0, 8, -8, 0] }}
+      transition={prefersReduced ? undefined : { duration: dur(4), repeat: Infinity, ease: 'easeInOut' }}
       style={{ display: 'inline-block' }}
     >
       <svg width="120" height="120" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
