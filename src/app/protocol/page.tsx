@@ -1,22 +1,18 @@
 "use client"
-import React, { useRef, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import Image from 'next/image'
 import { motion, useAnimation } from 'framer-motion'
 import { dur, VIEWPORT } from '@/lib/anim'
 
 export default function ProtocolPage(){
   const strokeControls = useAnimation()
-  const svgRef = useRef<SVGSVGElement | null>(null)
 
   useEffect(() => {
     // start a subtle draw when mounted
-    strokeControls.start(i => ({ strokeDashoffset: 0, transition: { duration: dur(1.2 + i * 0.4), ease: 'easeInOut' } }))
+    strokeControls.start(i => ({ strokeDashoffset: 0, transition: { duration: dur(1.2 + i * 0.4) } }))
   }, [strokeControls])
 
-  const pathVariant = {
-    hidden: { strokeDashoffset: 1 },
-    visible: (i: number) => ({ strokeDashoffset: 0, transition: { duration: dur(1 + i * 0.35), ease: 'easeInOut' } })
-  }
+  
 
   return (
     <main className="min-h-screen bg-[#071412] text-white">
@@ -35,9 +31,9 @@ export default function ProtocolPage(){
               </linearGradient>
             </defs>
             <motion.path d="M40 700 C200 600, 400 650, 600 600, 800 550, 1000 600" stroke="url(#gold)" strokeWidth="1" fill="none"
-              initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: dur(1.8), ease: 'easeInOut' }} />
+              initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: dur(1.8) }} />
             <motion.path d="M40 640 C220 560, 420 590, 620 560, 820 530, 1000 560" stroke="url(#gold)" strokeWidth="1" fill="none"
-              initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: dur(2.0), ease: 'easeInOut', delay: 0.2 }} />
+              initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: dur(2.0), delay: 0.2 }} />
             <motion.rect x={60} y={60} width={1080} height={680} stroke="url(#gold)" strokeWidth={1} fill="none" initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: dur(1.6), delay: 0.1 }} />
           </svg>
 
@@ -81,7 +77,7 @@ export default function ProtocolPage(){
                 (() => {
                   const item = {
                     hidden: { x: 30, opacity: 0 },
-                    show: (i: number) => ({ x: 0, opacity: 1, transition: { duration: dur(0.6 + i * 0.05), ease: 'easeOut' } })
+                    show: (i: number) => ({ x: 0, opacity: 1, transition: { duration: dur(0.6 + i * 0.05) } })
                   }
                   return (
                     <>

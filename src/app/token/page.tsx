@@ -87,7 +87,7 @@ export default function TokenPage(){
               <Image src={riverImg} alt="Modelo del Río - River visual" className="object-cover w-full h-56 md:h-72" width={1600} height={900} />
             </figure>
           </div>
-          <p className="mt-3 text-gray-600">Usamos un mecanismo de Tesorería Acretiva ("El Río") para que la venta de nuevos tokens fortalezca a los antiguos, no los debilite.</p>
+          <p className="mt-3 text-gray-600">Usamos un mecanismo de Tesorería Acretiva (&quot;El Río&quot;) para que la venta de nuevos tokens fortalezca a los antiguos, no los debilite.</p>
 
           <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
             <div className="p-6 bg-gray-50 rounded-lg shadow">
@@ -96,7 +96,7 @@ export default function TokenPage(){
             </div>
             <div className="p-6 bg-gray-50 rounded-lg shadow">
               <h4 className="font-semibold">Fase 2: La Reserva (Treasury)</h4>
-              <p className="mt-2 text-sm text-gray-600">El capital se acumula en una Tesorería de Expansión transparente. Es "agua" guardada para el siguiente ciclo.</p>
+              <p className="mt-2 text-sm text-gray-600">El capital se acumula en una Tesorería de Expansión transparente. Es &quot;agua&quot; guardada para el siguiente ciclo.</p>
             </div>
             <div className="p-6 bg-gray-50 rounded-lg shadow">
               <h4 className="font-semibold">Fase 3: La Expansión</h4>
