@@ -90,7 +90,7 @@ export default function Navbar(){
             const lum = 0.2126 * (r/255) + 0.7152 * (g/255) + 0.0722 * (b/255)
             return lum > 0.6
           }
-        } catch (e) {
+        } catch {
           // ignore cross-origin or compute errors and continue walking up
         }
         node = node.parentElement
@@ -112,7 +112,7 @@ export default function Navbar(){
                 const lum = 0.2126 * (r/255) + 0.7152 * (g/255) + 0.0722 * (b/255)
                 return lum > 0.6
               }
-            } catch (e) {
+            } catch {
               // continue
             }
             p = p.parentElement
@@ -131,7 +131,7 @@ export default function Navbar(){
         const el = document.elementFromPoint(x, y)
         const light = isElementBackgroundLight(el)
         setLightBg(light)
-      } catch (e) {
+      } catch {
         // ignore
       }
     }
