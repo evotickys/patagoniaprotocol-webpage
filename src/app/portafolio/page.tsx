@@ -1,4 +1,9 @@
 import Link from 'next/link'
+import Image from 'next/image'
+import scene2 from './el-portafolio-scene-2.jpg'
+import scene5 from './el-portafolio-scene-5.jpg'
+import card12 from './el-portafolio-scene-4-card-1&2.jpg'
+import card3 from './el-portafolio-scene-4-card-3.jpg'
 
 export default function PortafolioPage() {
   return (
@@ -17,11 +22,8 @@ export default function PortafolioPage() {
           </div>
 
           <div className="mt-12">
-            <div className="w-full h-56 md:h-72 lg:h-96 rounded-lg overflow-hidden bg-gradient-to-br from-teal-700 to-emerald-500 flex items-center justify-center">
-              <div className="text-center text-white/90">
-                <div className="font-semibold">[Video placeholder — cinematographic river shot]</div>
-                <div className="text-sm mt-2">(coloca aquí el mp4 o reemplaza por componente 3D cuando esté listo)</div>
-              </div>
+            <div className="w-full h-56 md:h-72 lg:h-96 rounded-lg overflow-hidden bg-black flex items-center justify-center">
+              <video src="/assets/el-portafolio-video.mp4" autoPlay muted loop playsInline className="w-full h-full object-cover" />
             </div>
           </div>
         </div>
@@ -61,39 +63,40 @@ export default function PortafolioPage() {
           </div>
 
           <div className="mt-8 lg:mt-0">
-            <div className="w-full lg:h-[720px] rounded-lg overflow-hidden bg-[linear-gradient(180deg,#e6f7fb,#bfeee6)] flex items-start justify-center">
-              <div className="p-6 max-w-xs text-center">
-                <div className="text-xl font-semibold">[Parallax image placeholder]</div>
-                <div className="text-sm mt-2 text-gray-700">(imagen vertical que va desde el glaciar hasta el bosque)</div>
-              </div>
+            <div className="w-full lg:h-[720px] rounded-lg overflow-hidden bg-[linear-gradient(180deg,#e6f7fb,#bfeee6)] relative">
+              <Image src={scene2} alt="Glaciar a bosque" fill className="object-cover" />
             </div>
           </div>
         </div>
       </section>
 
-      {/* THE INTERVENTION */}
+      {/* THE INTERVENTION / EL REFUGIO INVISIBLE */}
       <section className="py-20 bg-gray-50">
-        <div className="mx-auto max-w-6xl px-6 text-center">
-          <h3 className="text-2xl font-bold">Arquitectura del Silencio</h3>
-          <p className="mt-3 text-gray-600">Nuestra intervención humana es quirúrgica. Bajo el modelo de concesión, la infraestructura turística (Lodge) está diseñada para desaparecer en el paisaje.</p>
+        <div className="mx-auto max-w-6xl px-6 lg:grid lg:grid-cols-2 lg:gap-12 lg:items-center">
+          <div className="lg:pr-8">
+            <h3 className="text-3xl md:text-4xl font-extrabold">El Refugio Invisible</h3>
+            <p className="mt-4 text-lg text-gray-700 max-w-xl">Bajo el modelo de concesión, la infraestructura deja de ser un edificio para convertirse en un lente óptico. El Lodge está diseñado para amplificar el paisaje, borrando la línea entre el huésped y la intemperie.</p>
+          </div>
 
-          <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="rounded-lg overflow-hidden bg-white p-6 shadow">
-              <div className="h-44 bg-gray-100 rounded mb-4 flex items-center justify-center">[Render placeholder]</div>
-              <div className="font-semibold">Baja Densidad</div>
-              <p className="mt-2 text-sm text-gray-600">Pocas habitaciones, máximo valor por huésped.</p>
+          <div className="mt-8 lg:mt-0 grid grid-cols-1 gap-6">
+            <div className="flex gap-6 items-start lg:items-center bg-white p-6 rounded-lg shadow-lg">
+              <div className="w-56 h-40 md:w-64 md:h-44 relative rounded overflow-hidden flex-shrink-0">
+                <Image src={card12} alt="Ingeniería ligera" fill className="object-cover" />
+              </div>
+              <div className="flex-1">
+                <h4 className="text-xl md:text-2xl font-semibold">INGENIERÍA LIGERA</h4>
+                <p className="mt-3 text-base md:text-lg text-gray-700">Arquitectura efímera construida con estándares eternos. Materiales que envejecen con el bosque y sistemas de energía autónoma que garantizan una operación silenciosa y cero emisiones.</p>
+              </div>
             </div>
 
-            <div className="rounded-lg overflow-hidden bg-white p-6 shadow">
-              <div className="h-44 bg-gray-100 rounded mb-4 flex items-center justify-center">[Render placeholder]</div>
-              <div className="font-semibold">Cero Huella</div>
-              <p className="mt-2 text-sm text-gray-600">Construcción modular elevada, sin cemento sobre el suelo forestal.</p>
-            </div>
-
-            <div className="rounded-lg overflow-hidden bg-white p-6 shadow">
-              <div className="h-44 bg-gray-100 rounded mb-4 flex items-center justify-center">[Render placeholder]</div>
-              <div className="font-semibold">La Experiencia</div>
-              <p className="mt-2 text-sm text-gray-600">Tus dividendos provienen de viajeros que cruzan el mundo para despertar frente a este glaciar.</p>
+            <div className="flex gap-6 items-start lg:items-center bg-white p-6 rounded-lg shadow-lg">
+              <div className="w-56 h-40 md:w-64 md:h-44 relative rounded overflow-hidden flex-shrink-0">
+                <Image src={card3} alt="La economía del asombro" fill className="object-cover" />
+              </div>
+              <div className="flex-1">
+                <h4 className="text-xl md:text-2xl font-semibold">LA ECONOMÍA DEL ASOMBRO</h4>
+                <p className="mt-3 text-base md:text-lg text-gray-700">Tu retorno financiero proviene de una moneda escasa: el silencio absoluto. Transformamos la contemplación pasiva en un flujo de caja activo de alto valor.</p>
+              </div>
             </div>
           </div>
         </div>
@@ -106,11 +109,8 @@ export default function PortafolioPage() {
           <p className="mt-3 text-gray-300">Grosse es solo el comienzo. La visión del Protocolo es construir un corredor de conservación latitudinal.</p>
 
           <div className="mt-10 rounded-lg overflow-hidden bg-gray-900 p-8">
-            <div className="h-64 md:h-96 bg-[radial-gradient(circle_at_20%_30%,#0ff6d6_0%,#0bb48f_5%,transparent_20%),radial-gradient(circle_at_70%_70%,#fff 0%,#ffd 3%,transparent 8%)] flex items-center justify-center">
-              <div className="text-center">
-                <div className="font-semibold">[Mapa placeholder — Chile con nodos]</div>
-                <div className="mt-3 text-sm text-gray-400">Nodo 02: San Pedro de Atacama • Nodo 03: Valdivia • Nodo 04: Magallanes</div>
-              </div>
+            <div className="h-64 md:h-96 relative rounded bg-gray-900 overflow-hidden group cursor-zoom-in">
+              <Image src={scene5} alt="Mapa de nodos" fill className="object-contain transform transition-transform duration-700 ease-out group-hover:scale-150 origin-center" />
             </div>
           </div>
         </div>
